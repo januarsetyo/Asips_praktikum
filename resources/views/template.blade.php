@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <!-- Webpage Title -->
     <title>Asips</title>
 
@@ -46,10 +45,35 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#puskesmas & cadre care">Puskesmas & Cadre Care</a>
                     </li>
+                    {{-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false" href="#">Drop</a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item" href="article.html">Article Details</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="terms.html">Terms Conditions</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-linkk" href="/login">Login</a>
                     </li>
                 </ul>
+                {{-- <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="#your-link">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="#your-link">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </span> --}}
             </div> <!-- end of navbar-collapse -->
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
@@ -61,11 +85,19 @@
         <div class="container text-light py-5"  data-aos="fade-right">
             <h1 class=> <span class="home_text">Selamat Datang</span><br>Di Website Puskesmas Kami</h1>
             <p class="para para-light py-3">Website ini dibuat untuk mengenalkan ASIPS (Aplikasi Surveilans & informasi Pencegahan Stunting) aplikasi tepat guna yang dapat menghubungkan antara kader posyandu dengan pihak puskesmas dan orang tua dalam pencatatan status gizi balita sebagai upaya pencegahan stunting. Aplikasi ini bertujuan untuk melacak, mencatat dan merekam status gizi balita secara tepat, cepat dan sesuai dengan pengukuran di masing - masing posyandu. Sehingga jika ada balita yang terindikasi mengalami STUNTING maka langsung terlihat pada rekap laporan yang ada pada masing – masing posyandu.</p>
+            {{-- <div class="d-flex align-items-center">
+                <p class="p-2"><i class="fas fa-laptop-house fa-lg"></i></p>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="d-flex align-items-center">
+                <p class="p-2"><i class="fas fa-wifi fa-lg"></i></p>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div> --}}
+            {{-- <div class="my-3">
+                <a class="btn" href="#plans">View Plans</a>
+            </div> --}}
         </div> <!-- end of container -->
     </section> <!-- end of home -->
-
-
-
 
     <!-- About -->
 
@@ -143,7 +175,6 @@
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </section> <!-- end of services -->
-
 
     <!-- Contact -->
     <section class="contact d-flex align-items-center py-5" id="puskesmas & cadre care">
@@ -238,6 +269,21 @@
                     </div>
                     <p class="py-3 para-light">Jaga kesehatan anak anda konsultasikan segera ketika anak anda mengalami gejala.</p>
                     <div class="d-flex">
+                        {{-- <div class="me-3">
+                            <a href="#your-link">
+                                <i class="fab fa-facebook-f fa-2x py-2"></i>
+                            </a>
+                        </div>
+                        <div class="me-3">
+                            <a href="#your-link">
+                                <i class="fab fa-twitter fa-2x py-2"></i>
+                            </a>
+                        </div>
+                        <div class="me-3">
+                            <a href="#your-link">
+                                <i class="fab fa-instagram fa-2x py-2"></i>
+                            </a>
+                        </div> --}}
                     </div>
                 </div> <!-- end of col -->
 
@@ -258,7 +304,6 @@
                         </div>
                     </div>
                 </div> <!-- end of col -->
-
 
 
                 <div class="col-lg-3 py-4 py-md-5">
