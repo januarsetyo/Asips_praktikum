@@ -77,7 +77,7 @@
             </div> <!-- end of navbar-collapse -->
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
+
 
 
     <!-- Home -->
@@ -85,17 +85,6 @@
         <div class="container text-light py-5"  data-aos="fade-right">
             <h1 class=> <span class="home_text">Selamat Datang</span><br>Di Website Puskesmas Kami</h1>
             <p class="para para-light py-3">Website ini dibuat untuk mengenalkan ASIPS (Aplikasi Surveilans & informasi Pencegahan Stunting) aplikasi tepat guna yang dapat menghubungkan antara kader posyandu dengan pihak puskesmas dan orang tua dalam pencatatan status gizi balita sebagai upaya pencegahan stunting. Aplikasi ini bertujuan untuk melacak, mencatat dan merekam status gizi balita secara tepat, cepat dan sesuai dengan pengukuran di masing - masing posyandu. Sehingga jika ada balita yang terindikasi mengalami STUNTING maka langsung terlihat pada rekap laporan yang ada pada masing – masing posyandu.</p>
-            {{-- <div class="d-flex align-items-center">
-                <p class="p-2"><i class="fas fa-laptop-house fa-lg"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="d-flex align-items-center">
-                <p class="p-2"><i class="fas fa-wifi fa-lg"></i></p>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div> --}}
-            {{-- <div class="my-3">
-                <a class="btn" href="#plans">View Plans</a>
-            </div> --}}
         </div> <!-- end of container -->
     </section> <!-- end of home -->
 
@@ -108,9 +97,7 @@
                     <p>ABOUT US</p>
                     <p class="py-2 para-light">ASIPS (Aplikasi Surveilans & informasi Pencegahan Stunting) aplikasi tepat guna yang dapat menghubungkan antara kader posyandu dengan pihak puskesmas dan orang tua dalam pencatatan status gizi balita sebagai upaya pencegahan stunting. Aplikasi ini bertujuan untuk melacak, mencatat dan merekam status gizi balita secara tepat, cepat dan sesuai dengan pengukuran di masing - masing posyandu. Sehingga jika ada balita yang terindikasi mengalami STUNTING maka langsung terlihat pada rekap laporan yang ada pada masing – masing posyandu.</p>
 
-                    {{-- <div class="my-3">
-                        <a class="btn" href="#your-link">Learn More</a>
-                    </div> --}}
+
                 </div>
                 <div class="col-lg-5 text-center py-4 py-sm-0" data-aos="fade-down">
                     <img class="img-fluid" src="./assets/images/abouts.jpg" alt="about" >
@@ -269,21 +256,6 @@
                     </div>
                     <p class="py-3 para-light">Jaga kesehatan anak anda konsultasikan segera ketika anak anda mengalami gejala.</p>
                     <div class="d-flex">
-                        {{-- <div class="me-3">
-                            <a href="#your-link">
-                                <i class="fab fa-facebook-f fa-2x py-2"></i>
-                            </a>
-                        </div>
-                        <div class="me-3">
-                            <a href="#your-link">
-                                <i class="fab fa-twitter fa-2x py-2"></i>
-                            </a>
-                        </div>
-                        <div class="me-3">
-                            <a href="#your-link">
-                                <i class="fab fa-instagram fa-2x py-2"></i>
-                            </a>
-                        </div> --}}
                     </div>
                 </div> <!-- end of col -->
 
