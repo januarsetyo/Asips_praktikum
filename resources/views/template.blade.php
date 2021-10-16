@@ -46,18 +46,11 @@
                         <a class="nav-link" href="#puskesmas & cadre care">Puskesmas & Cadre Care</a>
                     </li>
 
-<<<<<<< HEAD
-
-=======
->>>>>>> d0721bd89e921792f72a3af76940ae0098ab41c1
                     <li class="nav-item">
                         <a class="nav-linkk" href="/login">Login</a>
                     </li>
                 </ul>
-<<<<<<< HEAD
-=======
 
->>>>>>> d0721bd89e921792f72a3af76940ae0098ab41c1
             </div> <!-- end of navbar-collapse -->
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
@@ -69,10 +62,6 @@
         <div class="container text-light py-5"  data-aos="fade-right">
             <h1 class=> <span class="home_text">Selamat Datang</span><br>Di Website Puskesmas Kami</h1>
             <p class="para para-light py-3">Website ini dibuat untuk mengenalkan ASIPS (Aplikasi Surveilans & informasi Pencegahan Stunting) aplikasi tepat guna yang dapat menghubungkan antara kader posyandu dengan pihak puskesmas dan orang tua dalam pencatatan status gizi balita sebagai upaya pencegahan stunting. Aplikasi ini bertujuan untuk melacak, mencatat dan merekam status gizi balita secara tepat, cepat dan sesuai dengan pengukuran di masing - masing posyandu. Sehingga jika ada balita yang terindikasi mengalami STUNTING maka langsung terlihat pada rekap laporan yang ada pada masing – masing posyandu.</p>
-<<<<<<< HEAD
-
-=======
->>>>>>> d0721bd89e921792f72a3af76940ae0098ab41c1
         </div> <!-- end of container -->
     </section> <!-- end of home -->
 
