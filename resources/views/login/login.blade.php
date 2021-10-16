@@ -8,7 +8,7 @@
   <body>
     <div class="wrapper">
         <div class="title">
-           Login Form
+           Login 
         </div>
         <form action="#">
            <div class="field">
