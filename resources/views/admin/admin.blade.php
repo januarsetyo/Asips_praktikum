@@ -222,6 +222,10 @@
   </div>
 </nav>
 
+<div class="row">
+  @yield('tabel')
+</div>
+
     <!-- ! Footer -->
     <footer class="footer">
   <div class="container footer--flex">
