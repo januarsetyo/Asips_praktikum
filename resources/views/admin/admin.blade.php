@@ -50,16 +50,22 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="posts.html">Kecamatan</a>
+                            <a href="/kecamatan">Kecamatan</a>
                         </li>
                         <li>
-                            <a href="new-post.html">Kelurahan</a>
+                            <a href="/kelurahan">Kelurahan</a>
                         </li>
                         <li>
-                            <a href="new-post.html">Posyandu</a>
+                            <a href="/posyandu">Posyandu</a>
                         </li>
                         <li>
-                            <a href="new-post.html">Role</a>
+                            <a href="/role">Role</a>
+                        </li>
+                        <li>
+                            <a href="/balita">Balita</a>
+                        </li>
+                        <li>
+                            <a href="/user">User</a>
                         </li>
                     </ul>
                 </li>
@@ -73,7 +79,7 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="categories.html">History Posyandu</a>
+                            <a href="/history">History Posyandu</a>
                         </li>
                     </ul>
                 </li>

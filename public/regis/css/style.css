@@ -563,7 +563,9 @@ label.valid {
     -ms-justify-content: center; }
 
   .form-button {
-    text-align: center; }
+    text-align: center;
+    border: none;
+}
 
   .signin-form {
     order: 1;
