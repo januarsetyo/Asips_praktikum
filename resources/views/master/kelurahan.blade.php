@@ -19,8 +19,8 @@
         <tbody>
             @foreach ($kelurahan as $datakelurahan)
             <tr>
-                <td scope="row">{{ $datakecamatan->id }}</td>
                 <td scope="row">{{ $datakelurahan->id }}</td>
+                <td scope="row">{{ $datakelurahan->id_kecamatan}}</td>
                 <td scope="row">{{ $datakelurahan->kelurahan }}</td>
                 <td scope="row">{{ $datakelurahan->created_at }}</td>
                 <td scope="row">{{ $datakelurahan->updated_at }}</td>

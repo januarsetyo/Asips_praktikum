@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 class Kelurahan extends Migration
 {
     /**
@@ -15,6 +16,7 @@ class Kelurahan extends Migration
     {
         Schema::create('Kelurahan', function (Blueprint $table) {
             $table->id();
+            $table->number('id_kecamatan');
             $table->string('kelurahan');
             $table->timestamps();
         });

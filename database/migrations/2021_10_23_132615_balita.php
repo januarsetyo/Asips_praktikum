@@ -15,11 +15,12 @@ class Balita extends Migration
     {
         Schema::create('balita', function (Blueprint $table) {
             $table->id();
-            $table->string('nama balita');
-            $table->string('nik orang tua');
-            $table->string('nama orang tua');
-            $table->string('tgl lahir balita');
-            $table->string('jenis kelamin balita');
+            $table->number('id_posyandu');
+            $table->string('nama_balita');
+            $table->string('nik_orang_tua');
+            $table->string('nama_orang_tua');
+            $table->string('tgl_lahir_balita');
+            $table->string('jenis_kelamin_balita');
             $table->timestamps();
         });
         Schema::table('balita', function (Blueprint $table) {

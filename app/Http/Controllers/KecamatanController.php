@@ -93,6 +93,7 @@ class KecamatanController extends Controller
     }
     public function tambahkecamatan()
     {
+        
         return view('tambah/tambahkecamatan');
     }
 }

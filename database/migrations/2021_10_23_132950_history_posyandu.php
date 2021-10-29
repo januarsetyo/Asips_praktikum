@@ -15,9 +15,10 @@ class HistoryPosyandu extends Migration
     {
         Schema::create('history_posyandu', function (Blueprint $table) {
             $table->id();
-            $table->string('tgl posyandu');
-            $table->string('berat badan balita');
-            $table->string('tinggi badan');
+            $table->number('id_balita');
+            $table->string('tgl_posyandu');
+            $table->string('berat_badan_balita');
+            $table->string('tinggi_badan');
             $table->timestamps();
         });
         Schema::table('history_posyandu', function (Blueprint $table) {

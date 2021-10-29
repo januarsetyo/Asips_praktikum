@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tambah Kelurahan</title>
+    <title>Tambah History</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="regis/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -22,26 +22,32 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Tambah Kelurahan</h2>
-                        <form method="POST" action="/kelurahan-form" class="register-form" id="register-form">
+                        <h2 class="form-title">Tambah History</h2>
+                        <form method="POST" action="/history-form" class="register-form" id="register-form">
                             @csrf
                             <tr>
-                                <td>Id Kecamatan</td>
+                                <td>Id Balita</td>
                                 <td>
-                                    <select name="id_kecamatan">
-                                        @foreach($kecamatan as $item)
-                                    <option name="id_kecamatan" value="{{ $item->id }}">{{ $item->kecamatan }}</option>
+                                    <select name="id_balita">
+                                        @foreach($balita as $item)
+                                    <option name="id_balita" value="{{ $item->id }}">{{ $item->balita }}</option>
                                         @endforeach
                                     </select>
                                 </td>
                             </tr>
                             <div class="form-group">
-                                <input type="text" name="kelurahan" id="name" placeholder="Nama Kelurahan"/>
+                                <input type="text" name="tgl_posyandu" id="name" placeholder="Tanggal Posyandu"/>
                             </div>
-
+                            <div class="form-group">
+                                <input type="text" name="berat_badan_balita" id="name" placeholder="Berat Badan Balita"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="tinggi_badan" id="name" placeholder="Tinggi Badan Balita"/>
+                            </div>
                             <div class="form-group form-button">
                                 <button type="submit" name="signup" id="signup" class="form-submit">Tambah</button>
                             </div>
+
                         </form>
                     </div>
                 </div>
@@ -54,3 +60,5 @@
     <script src="regis/js/main.js"></script>
 </body>
 </html>
+
+

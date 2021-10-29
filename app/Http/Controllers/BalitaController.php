@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Balita;
+use App\Models\Posyandu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BalitaController extends Controller
 {
@@ -14,7 +16,10 @@ class BalitaController extends Controller
      */
     public function index()
     {
-            return view('master/balita');
+        $balita = Balita::all();
+        return view('master/balita',
+        ['balita'=>$balita]);
+
     }
 
     /**
@@ -35,7 +40,20 @@ class BalitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->input(); // insert into
+
+		$table = new Balita(); // tabel
+
+        //value
+        $table->nama_balita              = $data['nama_balita'];
+        $table->nik_orang_tua            = $data['nik_orang_tua'];
+        $table->nama_orang_tua           = $data['nama_orang_tua'];
+        $table->tgl_lahir_balita         = $data['tgl_lahir_balita'];
+        $table->jenis_kelamin_balita     = $data['jenis_kelamin_balita'];
+        $table->id_posyandu              = $data['id_posyandu'];
+		$table->save();
+
+        return redirect('/balita');
     }
 
     /**
@@ -81,5 +99,12 @@ class BalitaController extends Controller
     public function destroy(Balita $balita)
     {
         //
+    }
+    public function tambahbalita()
+    {
+        $posyandu = Posyandu::all();
+        return view('tambah/tambahbalita',
+        ['posyandu'=>$posyandu]
+    );
     }
 }

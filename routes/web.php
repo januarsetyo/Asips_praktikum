@@ -25,20 +25,45 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [HomeController::class, 'index']);
+
+//login
+
 Route::get('/login', [login::class, 'index']);
 Route::get('/registration', [RegistrationController::class, 'index']);
+
+//admin
+
 Route::get('/dashboard', [AdminController::class, 'index']);
+Route::get('/user', [UserController::class, 'index']);
+
+//master
+
 Route::get('/balita', [BalitaController::class, 'index']);
 Route::get('/kecamatan', [KecamatanController::class, 'index']);
 Route::get('/kelurahan', [KelurahanController::class, 'index']);
 Route::get('/posyandu', [PosyanduController::class, 'index']);
 Route::get('/role', [RoleController::class, 'index']);
-Route::get('/history', [HistoryController::class, 'index']);
-Route::get('/user', [UserController::class, 'index']);
+
+//tambah
+
 Route::get('/tambahkecamatan', [KecamatanController::class, 'tambahkecamatan']);
 Route::get('/tambahkelurahan', [KelurahanController::class, 'tambahkelurahan']);
+Route::get('/tambahrole', [RoleController::class, 'tambahrole']);
+Route::get('/tambahposyandu', [PosyanduController::class, 'tambahposyandu']);
+Route::get('/tambahbalita', [BalitaController::class, 'tambahbalita']);
+
+//laporan
+
+Route::get('/history', [HistoryController::class, 'index']);
+
+//form
+
 Route::post('/register-form', [RegistrationController::class, 'store']);
 Route::post('/kecamatan-form', [KecamatanController::class, 'store']);
 Route::post('/kelurahan-form', [KelurahanController::class, 'store']);
+Route::post('/role-form', [RoleController::class, 'store']);
+Route::post('/posyandu-form', [PosyanduController::class, 'store']);
+Route::post('/balita-form', [BalitaController::class, 'store']);
+
 
 

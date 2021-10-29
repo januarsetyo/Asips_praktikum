@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kelurahan;
+use App\Models\Kecamatan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Kelurahan as GlobalKelurahan;
 
 class KelurahanController extends Controller
 {
@@ -16,7 +17,7 @@ class KelurahanController extends Controller
      */
     public function index()
     {
-        $kelurahan = DB::table('kelurahan')->get();
+        $kelurahan = kelurahan::all();
         return view('master/kelurahan',
         ['kelurahan'=>$kelurahan]
     );
@@ -41,7 +42,8 @@ class KelurahanController extends Controller
     public function store(Request $request)
     {
         $validatedata=$request->validate([
-            'kelurahan'=>'required'
+            'kelurahan'=>'required',
+            'id_kecamatan'=>'required'
         ]);
         Kelurahan::create($validatedata);
         $request->session()->flash('success','berhasil menambahkan kelurahan');
@@ -94,6 +96,9 @@ class KelurahanController extends Controller
     }
     public function tambahkelurahan()
     {
-        return view('tambah/tambahkelurahan');
+        $kecamatan = kecamatan::all();
+        return view('tambah/tambahkelurahan',
+        ['kecamatan'=>$kecamatan]
+    );
     }
 }

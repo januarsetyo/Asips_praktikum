@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tambah Kelurahan</title>
+    <title>Tambah Posyandu</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="regis/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -22,21 +22,24 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Tambah Kelurahan</h2>
-                        <form method="POST" action="/kelurahan-form" class="register-form" id="register-form">
+                        <h2 class="form-title">Tambah Posyandu</h2>
+                        <form method="POST" action="/posyandu-form" class="register-form" id="register-form">
                             @csrf
                             <tr>
-                                <td>Id Kecamatan</td>
+                                <td>Id Kelurahan</td>
                                 <td>
-                                    <select name="id_kecamatan">
-                                        @foreach($kecamatan as $item)
-                                    <option name="id_kecamatan" value="{{ $item->id }}">{{ $item->kecamatan }}</option>
+                                    <select name="id_kelurahan">
+                                        @foreach($kelurahan as $item)
+                                    <option name="id_kelurahan" value="{{ $item->id }}">{{ $item->kelurahan }}</option>
                                         @endforeach
                                     </select>
                                 </td>
                             </tr>
                             <div class="form-group">
-                                <input type="text" name="kelurahan" id="name" placeholder="Nama Kelurahan"/>
+                                <input type="text" name="posyandu" id="name" placeholder="Nama Posyandu"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="alamat_posyandu" id="name" placeholder="Alamat Posyandu"/>
                             </div>
 
                             <div class="form-group form-button">

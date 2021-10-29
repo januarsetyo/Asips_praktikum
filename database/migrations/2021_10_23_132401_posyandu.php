@@ -13,13 +13,14 @@ class Posyandu extends Migration
      */
     public function up()
     {
-        Schema::create('posyandu', function (Blueprint $table) {
+        Schema::create('Posyandu', function (Blueprint $table) {
             $table->id();
-            $table->string('nama posyandu');
-            $table->string('alamat posyandu');
+            $table->number('id_kelurahan');
+            $table->string('nama_posyandu');
+            $table->string('alamat_posyandu');
             $table->timestamps();
         });
-        Schema::table('posyandu', function (Blueprint $table) {
+        Schema::table('Posyandu', function (Blueprint $table) {
             $table->foreignId('id_kelurahan')->constrained('kelurahan');
         });
     }

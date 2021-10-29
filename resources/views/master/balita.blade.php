@@ -6,22 +6,34 @@
       <table class="table table-bordered table-dark">
         <thead>
           <tr class="users-table-info">
-            <th>id_balita</th>          
-            <th>id_posyandu</th>
-            <th>nama_balita</th>
-            <th>nik_orang_tua</th>
-            <th>nama_orang_tua</th>
-            <th>tgl_lahir_balita</th>
-            <th>jenis_kelamin_balita</th>
-            <th>status</th>
-            <th>created_at</th>
-            <th>updated_at</th>
+            <div class="form-group form-button">
+                <a href="/tambahbalita"><button type="submit" name="signup" id="signup" class="form-submit">Tambah</button></a>
+            </div>
+            <th>id balita</th>
+            <th>id posyandu</th>
+            <th>nama balita</th>
+            <th>nik orang tua</th>
+            <th>nama orang tua</th>
+            <th>tgl lahir balita</th>
+            <th>jenis kelamin balita</th>
+            <th>created at</th>
+            <th>updated at</th>
           </tr>
         </thead>
         <tbody>
+            @foreach ($balita as $databalita)
             <tr>
-              <th scope="row">1</th>
-            </tr>
+                <td scope="row">{{ $databalita->id }}</td>
+                <td scope="row">{{ $databalita->id_posyandu}}</td>
+                <td scope="row">{{ $databalita->nama_balita }}</td>
+                <td scope="row">{{ $databalita->nik_orang_tua }}</td>
+                <td scope="row">{{ $databalita->nama_orang_tua }}</td>
+                <td scope="row">{{ $databalita->tgl_lahir_balita }}</td>
+                <td scope="row">{{ $databalita->jenis_kelamin_balita }}</td>
+                <td scope="row">{{ $databalita->created_at }}</td>
+                <td scope="row">{{ $databalita->updated_at }}</td>
+              </tr>
+            @endforeach
           </tbody>
       </table>
     </div>

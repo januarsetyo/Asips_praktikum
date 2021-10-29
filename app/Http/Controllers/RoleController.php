@@ -14,7 +14,10 @@ class RoleController extends Controller
      */
     public function index()
     {
-            return view('master/role');
+        $role = role::all();
+        return view('master/role',
+        ['role'=>$role]
+    );
     }
 
     /**
@@ -35,7 +38,12 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedata=$request->validate([
+            'role'=>'required'
+        ]);
+        role::create($validatedata);
+        $request->session()->flash('success','berhasil menambahkan role');
+        return redirect('/role');
     }
 
     /**
@@ -81,5 +89,9 @@ class RoleController extends Controller
     public function destroy(Role $role)
     {
         //
+    }
+    public function tambahrole()
+    {
+        return view('tambah/tambahrole');
     }
 }

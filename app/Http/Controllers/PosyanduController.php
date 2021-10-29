@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Posyandu;
+use App\Models\Kelurahan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PosyanduController extends Controller
 {
@@ -14,7 +16,11 @@ class PosyanduController extends Controller
      */
     public function index()
     {
-            return view('master/posyandu');
+        $posyandu = Posyandu::all();
+        return view('master/posyandu',
+        ['posyandu'=>$posyandu]
+    );
+
     }
 
     /**
@@ -35,7 +41,17 @@ class PosyanduController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->input(); // insert into
+
+		$table = new Posyandu(); // tabel
+
+        //value
+        $table->nama_posyandu       = $data['posyandu'];
+        $table->alamat_posyandu     = $data['alamat_posyandu'];
+        $table->id_kelurahan         = $data['id_kelurahan'];
+		$table->save();
+
+        return redirect('/posyandu');
     }
 
     /**
@@ -81,5 +97,12 @@ class PosyanduController extends Controller
     public function destroy(Posyandu $posyandu)
     {
         //
+    }
+    public function tambahposyandu()
+    {
+        $kelurahan = kelurahan::all();
+        return view('tambah/tambahposyandu',
+        ['kelurahan'=>$kelurahan]
+    );
     }
 }
