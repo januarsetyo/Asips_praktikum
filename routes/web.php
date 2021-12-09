@@ -59,11 +59,17 @@ Route::get('/history', [HistoryController::class, 'index']);
 //form
 
 Route::post('/register-form', [RegistrationController::class, 'store']);
+Route::post('/login-form', [login::class, 'authenticate']);
 Route::post('/kecamatan-form', [KecamatanController::class, 'store']);
 Route::post('/kelurahan-form', [KelurahanController::class, 'store']);
 Route::post('/role-form', [RoleController::class, 'store']);
 Route::post('/posyandu-form', [PosyanduController::class, 'store']);
 Route::post('/balita-form', [BalitaController::class, 'store']);
 
+//Edit
+Route::post('/edit-kecamatan', [KecamatanController::class, 'editKecamatan']);
+Route::post('/edit-kelurahan', [KelurahanController::class, 'editKelurahan']);
+Route::post('/edit-posyandu', [PosyanduController::class, 'editPosyandu']);
 
-
+//Update
+Route::put('/update-kecamatan{id}', [KecamatanController::class, 'update']);

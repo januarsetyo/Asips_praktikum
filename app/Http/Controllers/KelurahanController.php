@@ -50,6 +50,12 @@ class KelurahanController extends Controller
         return redirect('/kelurahan');
     }
 
+    public function editKelurahan(Request $request){
+        $kecamatan = Kecamatan::all();
+        $kelurahan = Kelurahan::where('id',$request->id)->first();
+        return view('edit/editkelurahan', ['kecamatan'=>$kecamatan, 'kelurahan'=>$kelurahan]);
+    }
+
     /**
      * Display the specified resource.
      *

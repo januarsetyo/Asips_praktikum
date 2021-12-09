@@ -54,6 +54,12 @@ class PosyanduController extends Controller
         return redirect('/posyandu');
     }
 
+    public function editPosyandu(Request $request){
+        $kelurahan = Kelurahan::all();
+        $posyandu = Posyandu::where('id',$request->id)->first();
+        return view('edit/editposyandu', ['kelurahan'=>$kelurahan, 'posyandu'=>$posyandu]);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -105,4 +111,6 @@ class PosyanduController extends Controller
         ['kelurahan'=>$kelurahan]
     );
     }
+
+    
 }

@@ -47,6 +47,11 @@ class KecamatanController extends Controller
         return redirect('/kecamatan');
     }
 
+    public function editKecamatan(Request $request){
+        $kecamatan = Kecamatan::where('id',$request->id)->first();
+        return view('edit/editkecamatan', ['kecamatan'=>$kecamatan]);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -78,7 +83,10 @@ class KecamatanController extends Controller
      */
     public function update(Request $request, Kecamatan $kecamatan)
     {
-        //
+        DB::table('kecamatan') ->where('id',$request->id) ->update([
+            'kecamatan'=>$request->kecamatan
+        ]);
+        return redirect('/kecamatan');
     }
 
     /**

@@ -13,10 +13,18 @@
   </head>
   <body>
 
+	@if (session()->has('loginGagal'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('loginGagal') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
+
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-85 p-b-20">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST" action="/login-form">
+					@csrf
 					<span class="login100-form-title p-b-70">
 						Login
 					</span>
@@ -30,15 +38,14 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-50" data-validate="Enter password">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="password">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
-						 {{-- <button class="login100-form-btn" > --}}
-                            <a class="login100-form-btn" href="/dashboard">Login</a>
-							{{-- Login
-						</button> --}}
+						<button class="login100-form-btn" type="submit" > 
+							Login
+						</button>
 					</div>
 
 					<ul class="login-more p-t-190">
