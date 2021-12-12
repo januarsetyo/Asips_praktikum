@@ -87,7 +87,10 @@ class KelurahanController extends Controller
      */
     public function update(Request $request, Kelurahan $kelurahan)
     {
-        //
+        DB::table('kelurahan') ->where('id',$request->id) ->update([
+            'kelurahan'=>$request->kelurahan
+        ]);
+        return redirect('/kelurahan');
     }
 
     /**

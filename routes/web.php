@@ -73,3 +73,4 @@ Route::post('/edit-posyandu', [PosyanduController::class, 'editPosyandu']);
 
 //Update
 Route::put('/update-kecamatan{id}', [KecamatanController::class, 'update']);
+Route::put('/update-kelurahan{id}', [KelurahanController::class, 'update']);

@@ -14,6 +14,8 @@
             <th>kelurahan</th>
             <th>created at</th>
             <th>updated at</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -24,6 +26,15 @@
                 <td scope="row">{{ $datakelurahan->kelurahan }}</td>
                 <td scope="row">{{ $datakelurahan->created_at }}</td>
                 <td scope="row">{{ $datakelurahan->updated_at }}</td>
+                <td>
+                  <form action="/edit-kelurahan" method="post" class="d-inline">
+                      @csrf
+                      <input type="hidden" name="id" value="{{ $datakelurahan->id }}">
+                      <button class="btn btn-primary tombol border-0">
+                          Edit
+                      </button>
+                  </form>
+              </td>
               </tr>
             @endforeach
         </tbody>
