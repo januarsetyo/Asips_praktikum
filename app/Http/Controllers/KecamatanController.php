@@ -15,7 +15,7 @@ class KecamatanController extends Controller
      */
     public function index()
     {
-        $kecamatan = DB::table('kecamatan')->get();
+        $kecamatan = DB::table('kecamatan')->where('DELETED_AT',null)->get();
         return view('master/kecamatan',
         ['kecamatan'=>$kecamatan]
     );
@@ -95,9 +95,16 @@ class KecamatanController extends Controller
      * @param  \App\Models\Kecamatan  $kecamatan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kecamatan $kecamatan)
+    public function delete($id)
     {
-        //
+        date_default_timezone_set('Asia/Jakarta');
+
+        DB::table('kecamatan')->where('id',$id)->update([
+            'DELETED_AT' => date('Y-m-d H:i:s')
+        ]);
+ 
+    	return redirect('/kecamatan')->with('hapus','Data berhasil dihapus Bund');
+
     }
     public function tambahkecamatan()
     {

@@ -17,7 +17,7 @@ class KelurahanController extends Controller
      */
     public function index()
     {
-        $kelurahan = kelurahan::all();
+        $kelurahan = DB::table('kelurahan')->where('DELETED_AT',null)->get();
         return view('master/kelurahan',
         ['kelurahan'=>$kelurahan]
     );
@@ -99,9 +99,15 @@ class KelurahanController extends Controller
      * @param  \App\Models\Kelurahan  $kelurahan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kelurahan $kelurahan)
+    public function delete($id)
     {
-        //
+        date_default_timezone_set('Asia/Jakarta');
+
+        DB::table('kelurahan')->where('id',$id)->update([
+            'DELETED_AT' => date('Y-m-d H:i:s')
+        ]);
+ 
+    	return redirect('/kelurahan')->with('hapus','Data berhasil dihapus Bund');
     }
     public function tambahkelurahan()
     {

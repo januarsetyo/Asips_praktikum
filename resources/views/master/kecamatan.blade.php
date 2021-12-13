@@ -33,6 +33,9 @@
                       </button>
                   </form>
                 </td>
+                <td> 
+                  <a href="/hapus-kecamatan{{$datakecamatan->id}}" class="btn btn-primary tombol border-0">Hapus</a>
+                </td>
               </tr>
             @endforeach
         </tbody>
