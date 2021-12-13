@@ -22,8 +22,8 @@
             <tr>
                 <td scope="row">{{ $datakecamatan->id}}</td>
                 <td scope="row">{{ $datakecamatan->kecamatan }}</td>
-                <td scope="row">{{ $datakecamatan->CREATED_AT }}</td>
-                <td scope="row">{{ $datakecamatan->UPDATED_AT }}</td>
+                <td scope="row">{{ $datakecamatan->created_at }}</td>
+                <td scope="row">{{ $datakecamatan->updated_at }}</td>
                 <td>
                   <form action="/edit-kecamatan" method="post" class="d-inline">
                       @csrf
