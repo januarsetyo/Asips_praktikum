@@ -10,7 +10,6 @@
                 <a href="/tambahbalita"><button type="submit" name="signup" id="signup" class="form-submit">Tambah</button></a>
             </div>
             <th>id balita</th>
-            <th>id posyandu</th>
             <th>nama balita</th>
             <th>nik orang tua</th>
             <th>nama orang tua</th>
@@ -24,7 +23,6 @@
             @foreach ($balita as $databalita)
             <tr>
                 <td scope="row">{{ $databalita->id }}</td>
-                <td scope="row">{{ $databalita->id_posyandu}}</td>
                 <td scope="row">{{ $databalita->nama_balita }}</td>
                 <td scope="row">{{ $databalita->nik_orang_tua }}</td>
                 <td scope="row">{{ $databalita->nama_orang_tua }}</td>
