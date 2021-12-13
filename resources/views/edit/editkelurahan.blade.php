@@ -23,7 +23,8 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Edit Kelurahan</h2>
-                        <form method="POST" action="/kelurahan-form" class="register-form" id="register-form">
+                        <form method="POST" action="/update-kelurahan{{ $kelurahan->id }}" class="register-form" id="register-form">
+                            @method('PUT')
                             @csrf
                             <div class="form-group">
                                 <input type="hidden" name="id" value="{{ $kelurahan->id }}">
