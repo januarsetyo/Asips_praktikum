@@ -12,6 +12,7 @@
     <!-- Main css -->
     <link rel="stylesheet" href="regis/css/style.css">
     <link rel="icon" href="./assets/images/logo.png">
+
 </head>
 <body>
 
@@ -35,8 +36,8 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <a href="/kecamatan" class="btn btn-danger btn-user btn-block">
-                                        Batal
+                                    <a href="/kecamatan"><button type="button" class="btn btn-danger">Batal</button>
+
                                     </a>
                                 </div>
                                 <div class="col-sm-6">

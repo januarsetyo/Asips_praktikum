@@ -16,7 +16,7 @@ class PosyanduController extends Controller
      */
     public function index()
     {
-        $posyandu = Posyandu::all();
+        $posyandu = DB::table('posyandu')->where('DELETED_AT',null)->get();
         return view('master/posyandu',
         ['posyandu'=>$posyandu]
     );
@@ -91,7 +91,12 @@ class PosyanduController extends Controller
      */
     public function update(Request $request, Posyandu $posyandu)
     {
-        //
+        DB::table('posyandu') ->where('id',$request->id) ->update([
+            'id_kelurahan' => $request->id_kelurahan,
+            'nama_posyandu' => $request->posyandu,
+            'alamat_posyandu' => $request->alamat_posyandu,
+        ]);
+        return redirect('/posyandu');
     }
 
     /**
@@ -100,9 +105,15 @@ class PosyanduController extends Controller
      * @param  \App\Models\Posyandu  $posyandu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Posyandu $posyandu)
+    public function delete($id)
     {
-        //
+        date_default_timezone_set('Asia/Jakarta');
+
+        DB::table('posyandu')->where('id',$id)->update([
+            'DELETED_AT' => date('Y-m-d H:i:s')
+        ]);
+
+    	return redirect('/posyandu')->with('hapus','Data berhasil dihapus');
     }
     public function tambahposyandu()
     {
@@ -112,5 +123,5 @@ class PosyanduController extends Controller
     );
     }
 
-    
+
 }

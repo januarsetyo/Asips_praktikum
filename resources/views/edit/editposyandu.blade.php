@@ -12,6 +12,7 @@
     <!-- Main css -->
     <link rel="stylesheet" href="regis/css/style.css">
     <link rel="icon" href="./assets/images/logo.png">
+
 </head>
 <body>
 
@@ -46,8 +47,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <a href="/posyandu" class="btn btn-danger btn-user btn-block">
-                                        Batal
+                                    <a href="/posyandu"><button type="button" class="btn btn-danger">Hapus</button>
                                     </a>
                                 </div>
                                 <div class="col-sm-6">

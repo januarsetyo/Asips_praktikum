@@ -1,13 +1,13 @@
 @extends('admin/admin')
 
 @section('tabel')
-<div class="col-lg-9">
+<div class="col-lg-10">
     <div class="users-table table-wrapper">
-      <table class="table table-bordered table-dark">
+    <table class="table table-bordered border-primary">
         <thead>
           <tr class="users-table-info">
             <div class="form-group form-button">
-                <a href="/tambahkecamatan"><button type="submit" name="signup" id="signup" class="form-submit">Tambah</button></a>
+                <a href="/tambahkecamatan"><button class="form-btn primary-default-btn transparent-btn">Tambah Data</button></a>
             </div>
             <th>ID Kecamatan</th>
             <th>Kecamatan</th>
@@ -33,8 +33,8 @@
                       </button>
                   </form>
                 </td>
-                <td> 
-                  <a href="/hapus-kecamatan{{$datakecamatan->id}}" class="btn btn-primary tombol border-0">Hapus</a>
+                <td>
+                  <a href="/hapus-kecamatan{{$datakecamatan->id}}"><button type="button" class="btn btn-danger tombol">Hapus</button></a>
                 </td>
               </tr>
             @endforeach

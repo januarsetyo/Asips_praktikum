@@ -106,8 +106,8 @@ class KelurahanController extends Controller
         DB::table('kelurahan')->where('id',$id)->update([
             'DELETED_AT' => date('Y-m-d H:i:s')
         ]);
- 
-    	return redirect('/kelurahan')->with('hapus','Data berhasil dihapus Bund');
+
+    	return redirect('/kelurahan')->with('hapus','Data berhasil dihapus');
     }
     public function tambahkelurahan()
     {

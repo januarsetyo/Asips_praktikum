@@ -10,6 +10,8 @@
   <link rel="icon" href="./assets/images/logo.png">
   <!-- Custom styles -->
   <link rel="stylesheet" href="elegant/css/style.min.css">
+  <link rel="stylesheet" href="./css/tabel.css">
+
 </head>
 
 <body>

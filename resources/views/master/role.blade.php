@@ -1,13 +1,13 @@
 @extends('admin/admin')
 
 @section('tabel')
-<div class="col-lg-9">
+<div class="col-lg-10">
     <div class="users-table table-wrapper">
-      <table class="table table-bordered table-dark">
+    <table class="table table-bordered border-primary">
         <thead>
           <tr class="users-table-info">
             <div class="form-group form-button">
-                <a href="/tambahrole"><button type="submit" name="signup" id="signup" class="form-submit">Tambah</button></a>
+                <a href="/tambahrole"><button class="form-btn primary-default-btn transparent-btn">Tambah Data</button></a>
             </div>
             <th>id role</th>
             <th>Role</th>

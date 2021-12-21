@@ -1,7 +1,7 @@
 @extends('admin/admin')
 
 @section('tabel')
-<div class="col-lg-9">
+<div class="col-lg-10">
     <div class="users-table table-wrapper">
       <table class="table table-bordered table-dark">
         <thead>
