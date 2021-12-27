@@ -47,7 +47,7 @@ class PosyanduController extends Controller
 
         //value
         $table->nama_posyandu       = $data['posyandu'];
-        $table->alamat_posyandu     = $data['alamat_posyandu'];
+        $table->alamat_posyandu     = $data['alamat'];
         $table->id_kelurahan         = $data['id_kelurahan'];
 		$table->save();
 

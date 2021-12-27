@@ -36,7 +36,7 @@
                                 </td>
                             </tr>
                             <div class="form-group">
-                                <input type="text" name="tgl_posyandu" id="name" placeholder="Tanggal Posyandu"/>
+                                <input type="date" name="tgl_posyandu" id="name" placeholder="Tanggal Posyandu"/>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="berat_badan_balita" id="name" placeholder="Berat Badan Balita"/>

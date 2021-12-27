@@ -38,7 +38,7 @@ class RegistrationController extends Controller
     {
         $validatedata=$request->validate([
             'username'=>'required|unique:user',
-            'password'=>'required'
+            'required||min:8|max:32',
         ]);
         $validatedata['password']=bcrypt($validatedata['password']);
         User::create($validatedata);

@@ -10,4 +10,5 @@ class Posyandu extends Model
     use HasFactory;
     protected $table='posyandu';
     protected $guarded=['id'];
+
 }

@@ -70,13 +70,16 @@ Route::post('/balita-form', [BalitaController::class, 'store']);
 Route::post('/edit-kecamatan', [KecamatanController::class, 'editKecamatan']);
 Route::post('/edit-kelurahan', [KelurahanController::class, 'editKelurahan']);
 Route::post('/edit-posyandu', [PosyanduController::class, 'editPosyandu']);
+Route::post('/edit-balita', [BalitaController::class, 'editBalita']);
 
 //Update
 Route::put('/update-kecamatan{id}', [KecamatanController::class, 'update']);
 Route::put('/update-kelurahan{id}', [KelurahanController::class, 'update']);
 Route::put('/update-posyandu{id}', [PosyanduController::class, 'update']);
+Route::put('/update-balita{id}', [BalitaController::class, 'update']);
 
 //Delete
 Route::get('/hapus-kecamatan{id}', [KecamatanController::class, 'delete']);
 Route::get('/hapus-kelurahan{id}', [KelurahanController::class, 'delete']);
 Route::get('/hapus-posyandu{id}', [PosyanduController::class, 'delete']);
+Route::get('/hapus-balita{id}', [BalitaController::class, 'delete']);

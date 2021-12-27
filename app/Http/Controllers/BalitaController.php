@@ -16,7 +16,7 @@ class BalitaController extends Controller
      */
     public function index()
     {
-        $balita = Balita::all();
+        $balita = DB::table('balita')->where('DELETED_AT',null)->get();
         return view('master/balita',
         ['balita'=>$balita]);
 
@@ -45,16 +45,22 @@ class BalitaController extends Controller
 		$table = new Balita(); // tabel
 
         //value
-        $table->nama_balita              = $data['nama_balita'];
-        $table->nik_orang_tua            = $data['nik_orang_tua'];
-        $table->nama_orang_tua           = $data['nama_orang_tua'];
-        $table->tgl_lahir_balita         = $data['tgl_lahir_balita'];
-        $table->jenis_kelamin_balita     = $data['jenis_kelamin_balita'];
+        $table->nama_balita              = $data['nama'];
+        $table->nik_orang_tua            = $data['nik'];
+        $table->nama_orang_tua           = $data['nama orang tua'];
+        $table->tgl_lahir_balita         = $data['tanggal'];
+        $table->jenis_kelamin_balita     = $data['jk'];
         $table->id_posyandu              = $data['id_posyandu'];
 		$table->save();
 
         return redirect('/balita');
     }
+    public function editBalita(Request $request){
+        $posyandu = Posyandu::all();
+        $balita = Balita::where('id',$request->id)->first();
+        return view('edit/editbalita', ['posyandu'=>$posyandu, 'balita'=>$balita]);
+    }
+
 
     /**
      * Display the specified resource.
@@ -87,7 +93,16 @@ class BalitaController extends Controller
      */
     public function update(Request $request, Balita $balita)
     {
-        //
+        DB::table('posyandu') ->where('id',$request->id) ->update([
+            'id_kelurahan' => $request->id_kelurahan,
+            'nama_balita' => $request->nama_balita,
+            'nik_orang_tua' => $request->nik_orang_tua,
+            'nama_orang_tua' => $request->nama_orang_tua,
+            'tgl_lahir_balita' => $request->tgl_lahir_balita,
+            'jenis_kelamin_balita' => $request->jenis_kelamin_balita,
+
+        ]);
+        return redirect('/balita');
     }
 
     /**
@@ -100,8 +115,19 @@ class BalitaController extends Controller
     {
         //
     }
+    public function delete($id)
+    {
+        date_default_timezone_set('Asia/Jakarta');
+
+        DB::table('balita')->where('id',$id)->update([
+            'DELETED_AT' => date('Y-m-d H:i:s')
+        ]);
+
+    	return redirect('/balita')->with('hapus','Data berhasil dihapus');
+    }
     public function tambahbalita()
     {
+        date_default_timezone_set('Asia/Jakarta');
         $posyandu = Posyandu::all();
         return view('tambah/tambahbalita',
         ['posyandu'=>$posyandu]

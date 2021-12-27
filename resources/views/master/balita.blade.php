@@ -17,6 +17,8 @@
             <th>jenis kelamin balita</th>
             <th>created at</th>
             <th>updated at</th>
+            <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -30,6 +32,18 @@
                 <td scope="row">{{ $databalita->jenis_kelamin_balita }}</td>
                 <td scope="row">{{ $databalita->created_at }}</td>
                 <td scope="row">{{ $databalita->updated_at }}</td>
+                <td>
+                    <form action="/edit-balita" method="post" class="d-inline">
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $databalita->id }}">
+                        <button class="btn btn-primary tombol border-0">
+                            Edit
+                        </button>
+                    </form>
+                  </td>
+                  <td>
+                    <a href="/hapus-balita{{$databalita->id}}"><button type="button" class="btn btn-danger">Hapus</button></a>
+                  </td>
               </tr>
             @endforeach
           </tbody>

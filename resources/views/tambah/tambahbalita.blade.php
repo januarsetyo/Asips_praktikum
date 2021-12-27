@@ -45,7 +45,7 @@
                                 <input type="text" name="nama_orang_tua" id="name" placeholder="Nama Orang Tua"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="tgl_lahir_balita" id="name" placeholder="Tanggal Lahir Balita"/>
+                                <input type="date" name="tgl_lahir_balita" id="name" placeholder="Tanggal Lahir Balita"/>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="jenis_kelamin_balita" id="name" placeholder="Jenis Kelamin Balita"/>
