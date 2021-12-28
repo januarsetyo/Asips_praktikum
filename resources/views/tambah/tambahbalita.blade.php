@@ -30,7 +30,7 @@
                                 <td>
                                     <select name="id_posyandu">
                                         @foreach($posyandu as $item)
-                                    <option name="id_posyandu" value="{{ $item->id }}">{{ $item->posyandu }}</option>
+                                    <option name="id_posyandu" value="{{ $item->id }}">{{ $item->nama_posyandu }}</option>
                                         @endforeach
                                     </select>
                                 </td>

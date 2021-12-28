@@ -31,11 +31,16 @@
                                 <input type="hidden" placeholder="ID Posyandu" name="id" value="{{ $posyandu->id }}">
                             </div>
                             <div class="form-group">
+                                <tr>
+                                    <td>Id Kelurahan</td>
+                                    <td>
                                 <select name="id_kelurahan" class="form-control text-center">
                                     @foreach ($kelurahan as $item)
                                         <option value="{{ $item->id }}">{{ $item->kelurahan }}</option>
                                     @endforeach
                                 </select>
+                            </td>
+                        </tr>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user text-center" id="posyanduIn"
