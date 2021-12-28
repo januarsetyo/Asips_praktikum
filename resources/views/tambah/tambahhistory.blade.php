@@ -26,11 +26,12 @@
                         <form method="POST" action="/history-form" class="register-form" id="register-form">
                             @csrf
                             <tr>
-                                <td>Id Balita</td>
+                                <td>Nama Balita</td>
                                 <td>
                                     <select name="id_balita">
+                                        <option>Pilih Balita</option>
                                         @foreach($balita as $item)
-                                    <option name="id_balita" value="{{ $item->id }}">{{ $item->balita }}</option>
+                                    <option name="id_balita" value="{{ $item->id }}">{{ $item->nama_balita }}</option>
                                         @endforeach
                                     </select>
                                 </td>

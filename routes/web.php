@@ -42,6 +42,7 @@ Route::get('/balita', [BalitaController::class, 'index']);
 Route::get('/kecamatan', [KecamatanController::class, 'index']);
 Route::get('/kelurahan', [KelurahanController::class, 'index']);
 Route::get('/posyandu', [PosyanduController::class, 'index']);
+Route::get('/history', [HistoryController::class, 'index']);
 Route::get('/role', [RoleController::class, 'index']);
 
 //tambah
@@ -51,6 +52,7 @@ Route::get('/tambahkelurahan', [KelurahanController::class, 'tambahkelurahan']);
 Route::get('/tambahrole', [RoleController::class, 'tambahrole']);
 Route::get('/tambahposyandu', [PosyanduController::class, 'tambahposyandu']);
 Route::get('/tambahbalita', [BalitaController::class, 'tambahbalita']);
+Route::get('/tambahhistory', [HistoryController::class, 'tambahhistory']);
 
 //laporan
 
@@ -65,12 +67,14 @@ Route::post('/kelurahan-form', [KelurahanController::class, 'store']);
 Route::post('/role-form', [RoleController::class, 'store']);
 Route::post('/posyandu-form', [PosyanduController::class, 'store']);
 Route::post('/balita-form', [BalitaController::class, 'store']);
+Route::post('/history-form', [HistoryController::class, 'store']);
 
 //Edit
 Route::post('/edit-kecamatan', [KecamatanController::class, 'editKecamatan']);
 Route::post('/edit-kelurahan', [KelurahanController::class, 'editKelurahan']);
 Route::post('/edit-posyandu', [PosyanduController::class, 'editPosyandu']);
 Route::post('/edit-balita', [BalitaController::class, 'editBalita']);
+Route::post('/edit-history', [HistoryController::class, 'editHistory']);
 
 
 //Update
@@ -78,9 +82,11 @@ Route::put('/update-kecamatan{id}', [KecamatanController::class, 'update']);
 Route::put('/update-kelurahan{id}', [KelurahanController::class, 'update']);
 Route::put('/update-posyandu', [PosyanduController::class, 'update']);
 Route::put('/update-balita', [BalitaController::class, 'update']);
+Route::put('/update-history', [HistoryController::class, 'update']);
 
 //Delete
 Route::get('/hapus-kecamatan{id}', [KecamatanController::class, 'delete']);
 Route::get('/hapus-kelurahan{id}', [KelurahanController::class, 'delete']);
 Route::get('/hapus-posyandu{id}', [PosyanduController::class, 'delete']);
 Route::get('/hapus-balita{id}', [BalitaController::class, 'delete']);
+Route::get('/hapus-history{id}', [HistoryController::class, 'delete']);
