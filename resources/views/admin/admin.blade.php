@@ -117,12 +117,8 @@
     </div>
     <div class="sidebar-footer">
         <a href="##" class="sidebar-user">
-            <span class="sidebar-user-img">
-                <picture><source srcset="elegant/img/avatar/avatar-illustrated-03.webp" type="image/webp"><img src="elegant/img/avatar/avatar-illustrated-03.png" alt="User name"></picture>
-            </span>
             <div class="sidebar-user-info">
-                <span class="sidebar-user__title">Hasbi & Januar</span>
-                <span class="sidebar-user__subtitle">Support manager</span>
+                <div class="small">Login Sebagai: {{ auth()->user()->username }}</div>
             </div>
         </a>
     </div>
