@@ -24,14 +24,14 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Edit Posyandu</h2>
-                        <form method="POST" action="/posyandu-form" class="register-form" id="register-form">
+                        <form method="post" action="/update-posyandu" class="register-form" id="register-form">
+                            @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <input type="hidden" class="form-control form-control-user text-center" id="idPosIn"
-                                    placeholder="ID Posyandu" name="id" value="{{ $posyandu->id }}">
+                                <input type="hidden" placeholder="ID Posyandu" name="id" value="{{ $posyandu->id }}">
                             </div>
                             <div class="form-group">
-                                <select name="ID_KELURAHAN" class="form-control text-center">
+                                <select name="id_kelurahan" class="form-control text-center">
                                     @foreach ($kelurahan as $item)
                                         <option value="{{ $item->id }}">{{ $item->kelurahan }}</option>
                                     @endforeach
@@ -43,7 +43,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user text-center" id="alamat"
-                                    placeholder="Alamat Posyandu" name="alamat" value="{{ $posyandu->alamat_posyandu }}">
+                                    placeholder="Alamat Posyandu" name="alamat_posyandu" value="{{ $posyandu->alamat_posyandu }}">
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">

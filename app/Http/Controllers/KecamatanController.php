@@ -39,12 +39,13 @@ class KecamatanController extends Controller
      */
     public function store(Request $request)
     {
+        date_default_timezone_set('Asia/Jakarta');
         $validatedata=$request->validate([
             'kecamatan'=>'required'
         ]);
         Kecamatan::create($validatedata);
         $request->session()->flash('success','berhasil menambahkan kecamatan');
-        return redirect('/kecamatan');
+        return redirect('/kecamatan')->with('hapus','Data berhasil ditambah');
     }
 
     public function editKecamatan(Request $request){
@@ -83,10 +84,11 @@ class KecamatanController extends Controller
      */
     public function update(Request $request, Kecamatan $kecamatan)
     {
+        date_default_timezone_set('Asia/Jakarta');
         DB::table('kecamatan') ->where('id',$request->id) ->update([
             'kecamatan'=>$request->kecamatan
         ]);
-        return redirect('/kecamatan');
+        return redirect('/kecamatan')->with('hapus','Data berhasil di edit');
     }
 
     /**
@@ -102,13 +104,13 @@ class KecamatanController extends Controller
         DB::table('kecamatan')->where('id',$id)->update([
             'DELETED_AT' => date('Y-m-d H:i:s')
         ]);
- 
-    	return redirect('/kecamatan')->with('hapus','Data berhasil dihapus Bund');
+
+    	return redirect('/kecamatan')->with('hapus','Data berhasil dihapus');
 
     }
     public function tambahkecamatan()
     {
-        
+
         return view('tambah/tambahkecamatan');
     }
 }

@@ -29,7 +29,7 @@ class BalitaController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -40,23 +40,44 @@ class BalitaController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->input(); // insert into
+        date_default_timezone_set('Asia/Jakarta');
+        $validatedData = $request->validate([
+            'id_posyandu'     => 'required',
+            'nama_balita'   => 'required',
+            'nik_orang_tua'       => 'required',
+            'nama_orang_tua'       => 'required',
+            'tgl_lahir_balita'       => 'required',
+            'jenis_kelamin_balita'       => 'required',
 
-		$table = new Balita(); // tabel
+        ]);
 
-        //value
-        $table->nama_balita              = $data['nama'];
-        $table->nik_orang_tua            = $data['nik'];
-        $table->nama_orang_tua           = $data['nama orang tua'];
-        $table->tgl_lahir_balita         = $data['tanggal'];
-        $table->jenis_kelamin_balita     = $data['jk'];
-        $table->id_posyandu              = $data['id_posyandu'];
-		$table->save();
+        Balita::create($validatedData);
+        // $data = $request->input(); // insert into
 
-        return redirect('/balita');
+		// $table = new Balita(); // tabel
+
+        // //value
+        // $table->nama_balita              = $data['nama'];
+        // $table->nik_orang_tua            = $data['nik'];
+        // $table->nama_orang_tua           = $data['nama orang tua'];
+        // $table->tgl_lahir_balita         = $data['tanggal'];
+        // $table->jenis_kelamin_balita     = $data['jk'];
+        // $table->id_posyandu              = $data['id_posyandu'];
+		// $table->save();
+
+        return redirect('/balita')->with('hapus','Data berhasil ditambah');
     }
     public function editBalita(Request $request){
         $posyandu = Posyandu::all();
+        $jenis_kelamin_balita = [
+            'L'   => 'Laki-Laki',
+            'P'   => 'Perempuan'
+        ];
+
+        $status = [
+            '0'   => 'Belum ke Posyandu',
+            '1'   => 'Sudah ke Posyandu'
+        ];
         $balita = Balita::where('id',$request->id)->first();
         return view('edit/editbalita', ['posyandu'=>$posyandu, 'balita'=>$balita]);
     }
@@ -93,16 +114,17 @@ class BalitaController extends Controller
      */
     public function update(Request $request, Balita $balita)
     {
-        DB::table('posyandu') ->where('id',$request->id) ->update([
-            'id_kelurahan' => $request->id_kelurahan,
-            'nama_balita' => $request->nama_balita,
-            'nik_orang_tua' => $request->nik_orang_tua,
+        date_default_timezone_set('Asia/Jakarta');
+        DB::table('balita') ->where('id',$request->id) ->update([
+           'id_posyandu' => $request->id,
+            'nama_balita' => $request->nama,
+            'nik_orang_tua' => $request->nik,
             'nama_orang_tua' => $request->nama_orang_tua,
-            'tgl_lahir_balita' => $request->tgl_lahir_balita,
-            'jenis_kelamin_balita' => $request->jenis_kelamin_balita,
+            'tgl_lahir_balita' => $request->tanggal,
+            'jenis_kelamin_balita' => $request->jk,
 
         ]);
-        return redirect('/balita');
+        return redirect('/balita')->with('hapus','Data berhasil di edit');
     }
 
     /**

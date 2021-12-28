@@ -38,6 +38,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
+         date_default_timezone_set('Asia/Jakarta');
         $validatedata=$request->validate([
             'role'=>'required'
         ]);

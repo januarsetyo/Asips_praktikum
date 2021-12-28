@@ -24,14 +24,15 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Edit Balita</h2>
-                        <form method="POST" action="/balita-form" class="register-form" id="register-form">
+                        <form method="POST" action="/update-balita" class="register-form" id="register-form">
+                            @method('PUT')
                             @csrf
                             <div class="form-group">
                                 <input type="hidden" class="form-control form-control-user text-center" id="idPosIn"
                                     placeholder="ID Balita" name="id" value="{{ $balita->id }}">
                             </div>
                             <div class="form-group">
-                                <select name="ID_POSYANDU" class="form-control text-center">
+                                <select name="id_posyandu" class="form-control text-center">
                                     @foreach ($posyandu as $item)
                                         <option value="{{ $item->id }}">{{ $item->posyandu }}</option>
                                     @endforeach

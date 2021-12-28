@@ -41,17 +41,28 @@ class PosyanduController extends Controller
      */
     public function store(Request $request)
     {
+        date_default_timezone_set('Asia/Jakarta');
+        // $validatedData = $request->validate([
+        //     'id_kelurahan'     => 'required',
+        //     'nama_posyandu'   => 'required',
+        //     'alamat_posyandu'       => 'required',
+
+        // ]);
+
+        // Posyandu::create($validatedData);
+
+
         $data = $request->input(); // insert into
 
-		$table = new Posyandu(); // tabel
+		  $table = new Posyandu(); // tabel
 
-        //value
-        $table->nama_posyandu       = $data['posyandu'];
-        $table->alamat_posyandu     = $data['alamat'];
-        $table->id_kelurahan         = $data['id_kelurahan'];
-		$table->save();
+        //  //value
+         $table->nama_posyandu       = $data['posyandu'];
+         $table->alamat_posyandu     = $data['alamat_posyandu'];
+         $table->id_kelurahan         = $data['id_kelurahan'];
+		 $table->save();
 
-        return redirect('/posyandu');
+        return redirect('/posyandu')->with('hapus','Data berhasil ditambah');
     }
 
     public function editPosyandu(Request $request){
@@ -91,12 +102,13 @@ class PosyanduController extends Controller
      */
     public function update(Request $request, Posyandu $posyandu)
     {
+        date_default_timezone_set('Asia/Jakarta');
         DB::table('posyandu') ->where('id',$request->id) ->update([
             'id_kelurahan' => $request->id_kelurahan,
             'nama_posyandu' => $request->posyandu,
             'alamat_posyandu' => $request->alamat_posyandu,
         ]);
-        return redirect('/posyandu');
+        return redirect('/posyandu')->with('hapus','Data berhasil di edit');
     }
 
     /**
@@ -117,6 +129,7 @@ class PosyanduController extends Controller
     }
     public function tambahposyandu()
     {
+        date_default_timezone_set('Asia/Jakarta');
         $kelurahan = kelurahan::all();
         return view('tambah/tambahposyandu',
         ['kelurahan'=>$kelurahan]

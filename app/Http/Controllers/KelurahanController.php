@@ -41,13 +41,14 @@ class KelurahanController extends Controller
      */
     public function store(Request $request)
     {
+        date_default_timezone_set('Asia/Jakarta');
         $validatedata=$request->validate([
             'kelurahan'=>'required',
             'id_kecamatan'=>'required'
         ]);
         Kelurahan::create($validatedata);
         $request->session()->flash('success','berhasil menambahkan kelurahan');
-        return redirect('/kelurahan');
+        return redirect('/kelurahan')->with('hapus','Data berhasil ditambah');
     }
 
     public function editKelurahan(Request $request){
@@ -87,10 +88,11 @@ class KelurahanController extends Controller
      */
     public function update(Request $request, Kelurahan $kelurahan)
     {
+        date_default_timezone_set('Asia/Jakarta');
         DB::table('kelurahan') ->where('id',$request->id) ->update([
             'kelurahan'=>$request->kelurahan
         ]);
-        return redirect('/kelurahan');
+        return redirect('/kelurahan')->with('hapus','Data berhasil di edit');
     }
 
     /**

@@ -36,6 +36,7 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
+        date_default_timezone_set('Asia/Jakarta');
         $validatedata=$request->validate([
             'username'=>'required|unique:user',
             'required||min:8|max:32',

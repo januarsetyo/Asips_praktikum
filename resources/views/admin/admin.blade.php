@@ -177,7 +177,9 @@
 </nav>
 
 <div class="row">
-  @yield('tabel')
+    <div class="container">
+        @yield('tabel')
+    </div>
 </div>
 
     <!-- ! Footer -->
@@ -187,7 +189,7 @@
       <p>2021 © Asips Dashboard - <a href="Asips-dashboard.com" target="_blank"
           rel="noopener noreferrer">Asips-dashboard.com</a></p>
     </div>
-    
+
   </div>
 </footer>
   </div>

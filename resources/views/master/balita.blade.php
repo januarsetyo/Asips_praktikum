@@ -1,6 +1,24 @@
 @extends('admin/admin')
 
 @section('tabel')
+@if (session()->has('tambah'))
+<div class="alert alert-success alert-dismissible fade show" role="alert" style="text-align: center">
+    {{ session('tambah') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+@if (session()->has('edit'))
+<div class="alert alert-success alert-dismissible fade show" role="alert" style="text-align: center">
+    {{ session('edit') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
+@if (session()->has('hapus'))
+<div class="alert alert-success alert-dismissible fade show" role="alert" style="text-align: center">
+    {{ session('hapus') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="col-lg-10">
     <div class="users-table table-wrapper">
     <table class="table table-bordered border-primary">
