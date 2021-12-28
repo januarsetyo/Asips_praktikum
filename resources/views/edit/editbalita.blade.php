@@ -32,11 +32,16 @@
                                     placeholder="ID Balita" name="id" value="{{ $balita->id }}">
                             </div>
                             <div class="form-group">
+                                <tr>
+                                    <td>Id Posyandu</td>
+                                    <td>
                                 <select name="id_posyandu" class="form-control text-center">
                                     @foreach ($posyandu as $item)
-                                        <option value="{{ $item->id }}">{{ $item->posyandu }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->nama_posyandu }}</option>
                                     @endforeach
                                 </select>
+                            </td>
+                        </tr>
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user text-center" id="nama"

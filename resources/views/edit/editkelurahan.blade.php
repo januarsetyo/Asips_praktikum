@@ -29,13 +29,20 @@
                             @csrf
                             <div class="form-group">
                                 <input type="hidden" name="id" value="{{ $kelurahan->id }}">
+
                             </div>
                             <div class="form-group">
+                                <tr>
+                                    <td>Id Kecamatan</td>
+                                    <td>
                                 <select name="ID_KECAMATAN" class="form-control text-center">
                                     @foreach ($kecamatan as $item)
-                                        <option value="{{ $item->id }}">{{ $item->kecamatan }}</option>
+                                   <option value="{{ $item->id }}">{{ $item->kecamatan }}</option>
                                     @endforeach
                                 </select>
+                            </td>
+                            </tr>
+
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control form-control-user text-center" id="KecamatanIn"
