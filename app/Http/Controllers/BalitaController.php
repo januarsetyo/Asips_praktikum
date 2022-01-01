@@ -29,7 +29,7 @@ class BalitaController extends Controller
      */
     public function create()
     {
-       
+
     }
 
     /**
@@ -74,12 +74,8 @@ class BalitaController extends Controller
             'P'   => 'Perempuan'
         ];
 
-        $status = [
-            '0'   => 'Belum ke Posyandu',
-            '1'   => 'Sudah ke Posyandu'
-        ];
         $balita = Balita::where('id',$request->id)->first();
-        return view('edit/editbalita', ['posyandu'=>$posyandu, 'balita'=>$balita]);
+        return view('edit/editbalita', ['posyandu'=>$posyandu, 'balita'=>$balita,'jenis_kelamin_balita'=>$jenis_kelamin_balita]);
     }
 
 

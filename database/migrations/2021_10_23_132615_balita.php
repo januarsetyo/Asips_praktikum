@@ -15,7 +15,7 @@ class Balita extends Migration
     {
         Schema::create('balita', function (Blueprint $table) {
             $table->id();
-            $table->number('id_posyandu');
+           
             $table->string('nama_balita');
             $table->string('nik_orang_tua');
             $table->string('nama_orang_tua');
