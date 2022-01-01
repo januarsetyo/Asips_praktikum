@@ -17,7 +17,12 @@ class User extends Migration
             $table->id();
             $table->string('username');
             $table->string('password');
+            $table->timestamp('deleted_at');
             $table->timestamps();
+        });
+
+        Schema::table('user', function (Blueprint $table) {
+            $table->foreignId('id_role')->constrained('role');
         });
     }
 

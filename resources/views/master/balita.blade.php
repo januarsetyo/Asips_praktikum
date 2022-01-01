@@ -24,9 +24,11 @@
     <table class="table table-bordered border-primary">
         <thead>
           <tr class="users-table-info">
+            @if (auth()->user()->id_role=='1,2')
             <div class="form-group form-button">
                 <a href="/tambahbalita"><button class="form-btn primary-default-btn transparent-btn">Tambah Data</button>
             </div>
+            @endif
             <th>id balita</th>
             <th>nama balita</th>
             <th>nik orang tua</th>
@@ -35,8 +37,10 @@
             <th>jenis kelamin balita</th>
             <th>created at</th>
             <th>updated at</th>
+            @if (auth()->user()->id_role=='1,2')
             <th>Edit</th>
             <th>Delete</th>
+            @endif
           </tr>
         </thead>
         <tbody>
@@ -50,6 +54,7 @@
                 <td scope="row">{{ $databalita->jenis_kelamin_balita }}</td>
                 <td scope="row">{{ $databalita->created_at }}</td>
                 <td scope="row">{{ $databalita->updated_at }}</td>
+                @if (auth()->user()->id_role=='1,2')
                 <td>
                     <form action="/edit-balita" method="post" class="d-inline">
                         @csrf
@@ -62,6 +67,7 @@
                   <td>
                     <a href="/hapus-balita{{$databalita->id}}"><button type="button" class="btn btn-danger">Hapus</button></a>
                   </td>
+                  @endif
               </tr>
             @endforeach
           </tbody>

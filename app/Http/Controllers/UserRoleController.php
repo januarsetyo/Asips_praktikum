@@ -42,14 +42,24 @@ class UserRoleController extends Controller
     public function store(Request $request)
     {
         date_default_timezone_set('Asia/Jakarta');
-        $validatedata=$request->validate([
-            'user_role'=>'required',
-            'id_user'=>'required',
-            'id_role'=>'required'
-            
-        ]);
-        UserRole::create($validatedata);
-        $request->session()->flash('success','berhasil menambahkan kelurahan');
+        //$validatedata=$request->validate([
+        //    'user_role'=>'required',
+        //    'id_user'=>'required',
+        //    'id_role'=>'required'
+        //    
+        //]);
+        //UserRole::create($validatedata);
+        //$request->session()->flash('success','berhasil menambahkan kelurahan');
+        //return redirect('/userrole')->with('hapus','Data berhasil ditambah');
+        $data = $request->input(); // insert into
+
+		  $table = new UserRole(); // tabel
+
+        //  //value
+         $table->id_user                = $data['id_user'];
+         $table->id_role                = $data['id_role'];
+		 $table->save();
+
         return redirect('/userrole')->with('hapus','Data berhasil ditambah');
     }
 

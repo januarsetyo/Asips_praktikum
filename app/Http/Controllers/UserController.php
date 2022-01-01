@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\user;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use User as GlobalUser;
 
 class UserController extends Controller
 {
@@ -59,9 +61,10 @@ class UserController extends Controller
      * @param  \App\Models\user  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(user $user)
-    {
-        //
+    public function editUser(Request $request){
+        $role = Role::all();
+        $user= User::where('id',$request->id)->first();
+        return view('edit/edituser', ['role'=>$role, 'user'=>$user]);
     }
 
     /**
@@ -73,7 +76,12 @@ class UserController extends Controller
      */
     public function update(Request $request, user $user)
     {
-        //
+        date_default_timezone_set('Asia/Jakarta');
+        DB::table('user') ->where('id',$request->id) ->update([
+            'id_role' => $request->id_role,
+            'username' => $request->username,
+        ]);
+        return redirect('/user')->with('hapus','Data berhasil di edit');
     }
 
     /**

@@ -51,6 +51,7 @@
                         </span>
                     </a>
                     <ul class="cat-sub-menu">
+                      @if (auth()->user()->id_role=='1')
                         <li>
                             <a href="/kecamatan">Kecamatan</a>
                         </li>
@@ -64,14 +65,12 @@
                             <a href="/role">Role</a>
                         </li>
                         <li>
+                          <a href="/user">User</a>
+                        </li>
+                      @endif
+                        <li>
                             <a href="/balita">Balita</a>
                         </li>
-                        <li>
-                            <a href="/user">User</a>
-                        </li>
-                        <li>
-                          <a href="/userrole">User Role</a>
-                      </li>
                     </ul>
                 </li>
                 <li>
