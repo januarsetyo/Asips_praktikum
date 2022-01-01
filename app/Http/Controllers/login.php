@@ -16,7 +16,7 @@ class login extends Controller
     {
 
             return view('login/login');
-        
+
     }
 
     public function authenticate(Request $request){
@@ -95,5 +95,14 @@ class login extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }
