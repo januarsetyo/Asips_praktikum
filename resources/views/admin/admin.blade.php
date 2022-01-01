@@ -69,6 +69,9 @@
                         <li>
                             <a href="/user">User</a>
                         </li>
+                        <li>
+                          <a href="/userrole">User Role</a>
+                      </li>
                     </ul>
                 </li>
                 <li>
@@ -162,10 +165,12 @@
               <i data-feather="settings" aria-hidden="true"></i>
               <span>Account settings</span>
             </a></li>
-          <li><a class="danger" href="##">
+          <li>
+            <form action="/logout" >
+              <button type="submit" class="danger">
               <i data-feather="log-out" aria-hidden="true"></i>
-              <span>Log out</span>
-            </a></li>
+              <span>Log out</span></button>
+            </form>
         </ul>
       </div>
     </div>
