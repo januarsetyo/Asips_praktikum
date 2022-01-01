@@ -16,6 +16,7 @@ use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\OrangTuaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserRoleController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,7 @@ Route::get('/', [HomeController::class, 'index']);
 //login
 
 Route::get('/login', [login::class, 'index']);
+Route::get('/logout', [login::class, 'logout']);
 Route::get('/registration', [RegistrationController::class, 'index']);
 
 //admin
@@ -41,17 +43,22 @@ Route::get('/dashboard', [AdminController::class, 'index']);
 Route::get('/user', [UserController::class, 'index']);
 
 //master
+Route::group(['middleware' =>['auth', 'CekRole:1']], function(){
+    Route::get('/kecamatan', [KecamatanController::class, 'index']);
+    Route::get('/kelurahan', [KelurahanController::class, 'index']);
+    Route::get('/posyandu', [PosyanduController::class, 'index']);
+    Route::get('/role', [RoleController::class, 'index']);
+    Route::get('/userrole', [UserRoleController::class, 'index']);
+    Route::get('/adminposyandu', [AdminPosyanduController::class, 'index']);
+    Route::get('/superadmin', [SuperAdminController::class, 'index']);
+    Route::get('/orangtua', [OrangTuaController::class, 'index']);
+});
 
-Route::get('/balita', [BalitaController::class, 'index']);
-Route::get('/kecamatan', [KecamatanController::class, 'index']);
-Route::get('/kelurahan', [KelurahanController::class, 'index']);
-Route::get('/posyandu', [PosyanduController::class, 'index']);
-Route::get('/history', [HistoryController::class, 'index']);
-Route::get('/role', [RoleController::class, 'index']);
-Route::get('/userrole', [UserRoleController::class, 'index']);
-Route::get('/adminposyandu', [AdminPosyanduController::class, 'index']);
-Route::get('/superadmin', [SuperAdminController::class, 'index']);
-Route::get('/orangtua', [OrangTuaController::class, 'index']);
+Route::group(['middleware' =>['auth', 'CekRole:1,2,3']], function(){
+    Route::get('/balita', [BalitaController::class, 'index']);
+    Route::get('/history', [HistoryController::class, 'index']);
+});
+
 
 //tambah
 
@@ -86,6 +93,7 @@ Route::post('/edit-posyandu', [PosyanduController::class, 'editPosyandu']);
 Route::post('/edit-balita', [BalitaController::class, 'editBalita']);
 Route::post('/edit-history', [HistoryController::class, 'editHistory']);
 Route::post('/edit-userrole', [UserRoleController::class, 'editUserRole']);
+Route::post('/edit-user', [UserController::class, 'editUser']);
 
 
 //Update
@@ -94,7 +102,8 @@ Route::put('/update-kelurahan{id}', [KelurahanController::class, 'update']);
 Route::put('/update-posyandu', [PosyanduController::class, 'update']);
 Route::put('/update-balita', [BalitaController::class, 'update']);
 Route::put('/update-history', [HistoryController::class, 'update']);
-Route::put('/update-userrole', [UserRoleHistoryController::class, 'update']);
+Route::put('/update-userrole', [UserRoleController::class, 'update']);
+Route::put('/update-user', [UserController::class, 'update']);
 
 //Delete
 Route::get('/hapus-kecamatan{id}', [KecamatanController::class, 'delete']);
@@ -103,6 +112,3 @@ Route::get('/hapus-posyandu{id}', [PosyanduController::class, 'delete']);
 Route::get('/hapus-balita{id}', [BalitaController::class, 'delete']);
 Route::get('/hapus-history{id}', [HistoryController::class, 'delete']);
 Route::get('/hapus-userrole{id}', [UserRoleController::class, 'delete']);
-
-// logout
-Route::get('/logout', [login::class, 'logout']);
