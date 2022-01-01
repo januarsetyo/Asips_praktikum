@@ -93,6 +93,7 @@ class RoleController extends Controller
     }
     public function tambahrole()
     {
+        date_default_timezone_set('Asia/Jakarta');
         return view('tambah/tambahrole');
     }
 }

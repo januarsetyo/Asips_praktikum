@@ -103,3 +103,6 @@ Route::get('/hapus-posyandu{id}', [PosyanduController::class, 'delete']);
 Route::get('/hapus-balita{id}', [BalitaController::class, 'delete']);
 Route::get('/hapus-history{id}', [HistoryController::class, 'delete']);
 Route::get('/hapus-userrole{id}', [UserRoleController::class, 'delete']);
+
+// logout
+Route::get('/logout', [login::class, 'logout']);
