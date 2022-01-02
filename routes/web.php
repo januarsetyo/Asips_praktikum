@@ -40,7 +40,7 @@ Route::get('/registration', [RegistrationController::class, 'index']);
 //admin
 
 Route::get('/dashboard', [AdminController::class, 'index']);
-Route::get('/user', [UserController::class, 'index']);
+Route::get('/user', [UserController::class, 'index'])->middleware('auth', 'CekRole:1');
 
 //master
 Route::group(['middleware' =>['auth', 'CekRole:1']], function(){
@@ -62,53 +62,50 @@ Route::group(['middleware' =>['auth', 'CekRole:1,2,3']], function(){
 
 //tambah
 
-Route::get('/tambahkecamatan', [KecamatanController::class, 'tambahkecamatan']);
-Route::get('/tambahkelurahan', [KelurahanController::class, 'tambahkelurahan']);
-Route::get('/tambahrole', [RoleController::class, 'tambahrole']);
-Route::get('/tambahuserrole', [UserRoleController::class, 'tambahuserrole']);
-Route::get('/tambahposyandu', [PosyanduController::class, 'tambahposyandu']);
-Route::get('/tambahbalita', [BalitaController::class, 'tambahbalita']);
-Route::get('/tambahhistory', [HistoryController::class, 'tambahhistory']);
+Route::get('/tambahkecamatan', [KecamatanController::class, 'tambahkecamatan'])->middleware('auth', 'CekRole:1');
+Route::get('/tambahkelurahan', [KelurahanController::class, 'tambahkelurahan'])->middleware('auth', 'CekRole:1');
+Route::get('/tambahrole', [RoleController::class, 'tambahrole'])->middleware('auth', 'CekRole:1');
+Route::get('/tambahuserrole', [UserRoleController::class, 'tambahuserrole'])->middleware('auth', 'CekRole:1');
+Route::get('/tambahposyandu', [PosyanduController::class, 'tambahposyandu'])->middleware('auth', 'CekRole:1');
+Route::get('/tambahbalita', [BalitaController::class, 'tambahbalita'])->middleware('auth', 'CekRole:1,2');
+Route::get('/tambahhistory', [HistoryController::class, 'tambahhistory'])->middleware('auth', 'CekRole:1,2');
 
-//laporan
-
-Route::get('/history', [HistoryController::class, 'index']);
 
 //form
 
 Route::post('/register-form', [RegistrationController::class, 'store']);
 Route::post('/login-form', [login::class, 'authenticate']);
-Route::post('/kecamatan-form', [KecamatanController::class, 'store']);
-Route::post('/kelurahan-form', [KelurahanController::class, 'store']);
-Route::post('/role-form', [RoleController::class, 'store']);
-Route::post('/userrole-form', [UserRoleController::class, 'store']);
-Route::post('/posyandu-form', [PosyanduController::class, 'store']);
-Route::post('/balita-form', [BalitaController::class, 'store']);
-Route::post('/history-form', [HistoryController::class, 'store']);
+Route::post('/kecamatan-form', [KecamatanController::class, 'store'])->middleware('auth', 'CekRole:1');
+Route::post('/kelurahan-form', [KelurahanController::class, 'store'])->middleware('auth', 'CekRole:1');
+Route::post('/role-form', [RoleController::class, 'store'])->middleware('auth', 'CekRole:1');
+Route::post('/userrole-form', [UserRoleController::class, 'store'])->middleware('auth', 'CekRole:1');
+Route::post('/posyandu-form', [PosyanduController::class, 'store'])->middleware('auth', 'CekRole:1');
+Route::post('/balita-form', [BalitaController::class, 'store'])->middleware('auth', 'CekRole:1,2');
+Route::post('/history-form', [HistoryController::class, 'store'])->middleware('auth', 'CekRole:1,2');
 
 //Edit
-Route::post('/edit-kecamatan', [KecamatanController::class, 'editKecamatan']);
-Route::post('/edit-kelurahan', [KelurahanController::class, 'editKelurahan']);
-Route::post('/edit-posyandu', [PosyanduController::class, 'editPosyandu']);
-Route::post('/edit-balita', [BalitaController::class, 'editBalita']);
-Route::post('/edit-history', [HistoryController::class, 'editHistory']);
+Route::post('/edit-kecamatan', [KecamatanController::class, 'editKecamatan'])->middleware('auth', 'CekRole:1');
+Route::post('/edit-kelurahan', [KelurahanController::class, 'editKelurahan'])->middleware('auth', 'CekRole:1');
+Route::post('/edit-posyandu', [PosyanduController::class, 'editPosyandu'])->middleware('auth', 'CekRole:1');
+Route::post('/edit-balita', [BalitaController::class, 'editBalita'])->middleware('auth', 'CekRole:1,2,3');
+Route::post('/edit-history', [HistoryController::class, 'editHistory'])->middleware('auth', 'CekRole:1,2');
 Route::post('/edit-userrole', [UserRoleController::class, 'editUserRole']);
-Route::post('/edit-user', [UserController::class, 'editUser']);
+Route::post('/edit-user', [UserController::class, 'editUser'])->middleware('auth', 'CekRole:1');
 
 
 //Update
-Route::put('/update-kecamatan{id}', [KecamatanController::class, 'update']);
-Route::put('/update-kelurahan{id}', [KelurahanController::class, 'update']);
-Route::put('/update-posyandu', [PosyanduController::class, 'update']);
-Route::put('/update-balita', [BalitaController::class, 'update']);
-Route::put('/update-history', [HistoryController::class, 'update']);
-Route::put('/update-userrole', [UserRoleController::class, 'update']);
-Route::put('/update-user', [UserController::class, 'update']);
+Route::put('/update-kecamatan{id}', [KecamatanController::class, 'update'])->middleware('auth', 'CekRole:1');
+Route::put('/update-kelurahan{id}', [KelurahanController::class, 'update'])->middleware('auth', 'CekRole:1');
+Route::put('/update-posyandu', [PosyanduController::class, 'update'])->middleware('auth', 'CekRole:1');
+Route::put('/update-balita', [BalitaController::class, 'update'])->middleware('auth', 'CekRole:1,2,3');
+Route::put('/update-history', [HistoryController::class, 'update'])->middleware('auth', 'CekRole:1,2');
+Route::put('/update-userrole', [UserRoleController::class, 'update'])->middleware('auth', 'CekRole:1');
+Route::put('/update-user', [UserController::class, 'update'])->middleware('auth', 'CekRole:1');
 
 //Delete
-Route::get('/hapus-kecamatan{id}', [KecamatanController::class, 'delete']);
-Route::get('/hapus-kelurahan{id}', [KelurahanController::class, 'delete']);
-Route::get('/hapus-posyandu{id}', [PosyanduController::class, 'delete']);
-Route::get('/hapus-balita{id}', [BalitaController::class, 'delete']);
-Route::get('/hapus-history{id}', [HistoryController::class, 'delete']);
-Route::get('/hapus-userrole{id}', [UserRoleController::class, 'delete']);
+Route::get('/hapus-kecamatan{id}', [KecamatanController::class, 'delete'])->middleware('auth', 'CekRole:1');
+Route::get('/hapus-kelurahan{id}', [KelurahanController::class, 'delete'])->middleware('auth', 'CekRole:1');
+Route::get('/hapus-posyandu{id}', [PosyanduController::class, 'delete'])->middleware('auth', 'CekRole:1');
+Route::get('/hapus-balita{id}', [BalitaController::class, 'delete'])->middleware('auth', 'CekRole:1,2');
+Route::get('/hapus-history{id}', [HistoryController::class, 'delete'])->middleware('auth', 'CekRole:1,2');
+Route::get('/hapus-userrole{id}', [UserRoleController::class, 'delete'])->middleware('auth', 'CekRole:1');
