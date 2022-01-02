@@ -67,7 +67,7 @@ Route::get('/tambahkelurahan', [KelurahanController::class, 'tambahkelurahan'])-
 Route::get('/tambahrole', [RoleController::class, 'tambahrole'])->middleware('auth', 'CekRole:1');
 Route::get('/tambahuserrole', [UserRoleController::class, 'tambahuserrole'])->middleware('auth', 'CekRole:1');
 Route::get('/tambahposyandu', [PosyanduController::class, 'tambahposyandu'])->middleware('auth', 'CekRole:1');
-Route::get('/tambahbalita', [BalitaController::class, 'tambahbalita'])->middleware('auth', 'CekRole:1,2');
+Route::get('/tambahbalita', [BalitaController::class, 'tambahbalita'])->middleware('auth', 'CekRole:1,2,3');
 Route::get('/tambahhistory', [HistoryController::class, 'tambahhistory'])->middleware('auth', 'CekRole:1,2');
 
 
@@ -80,7 +80,7 @@ Route::post('/kelurahan-form', [KelurahanController::class, 'store'])->middlewar
 Route::post('/role-form', [RoleController::class, 'store'])->middleware('auth', 'CekRole:1');
 Route::post('/userrole-form', [UserRoleController::class, 'store'])->middleware('auth', 'CekRole:1');
 Route::post('/posyandu-form', [PosyanduController::class, 'store'])->middleware('auth', 'CekRole:1');
-Route::post('/balita-form', [BalitaController::class, 'store'])->middleware('auth', 'CekRole:1,2');
+Route::post('/balita-form', [BalitaController::class, 'store'])->middleware('auth', 'CekRole:1,2,3');
 Route::post('/history-form', [HistoryController::class, 'store'])->middleware('auth', 'CekRole:1,2');
 
 //Edit
