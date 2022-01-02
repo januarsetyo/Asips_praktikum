@@ -90,31 +90,7 @@
                 <li>
 
                 </li>
-            </ul>
-            <span class="system-menu__title">system</span>
-            <ul class="sidebar-body-menu">
 
-                <li>
-                    <a class="show-cat-btn" href="##">
-                        <span class="icon user-3" aria-hidden="true"></span>Users
-                        <span class="category__btn transparent-btn" title="Open list">
-                            <span class="sr-only">Open list</span>
-                            <span class="icon arrow-down" aria-hidden="true"></span>
-                        </span>
-                    </a>
-                    <ul class="cat-sub-menu">
-                        <li>
-                            <a href="users-01.html">Users-01</a>
-                        </li>
-                        <li>
-                            <a href="users-02.html">Users-02</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="##"><span class="icon setting" aria-hidden="true"></span>Settings</a>
-                </li>
-            </ul>
         </div>
     </div>
     <div class="sidebar-footer">
@@ -176,8 +152,8 @@
     <footer class="footer">
   <div class="container footer--flex">
     <div class="footer-start">
-      <p>2021 © Asips Dashboard - <a href="Asips-dashboard.com" target="_blank"
-          rel="noopener noreferrer">Asips-dashboard.com</a></p>
+     <a href="https://www.youtube.com/watch?v=iVlFS_ghWjc" target="_blank"
+          rel="noopener noreferrer">Asips-dashboard.com</a>
     </div>
 
   </div>

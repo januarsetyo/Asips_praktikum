@@ -39,12 +39,11 @@ class RegistrationController extends Controller
         date_default_timezone_set('Asia/Jakarta');
         $validatedata=$request->validate([
             'username'=>'required|unique:user',
-            'required||min:8|max:32',
+            'password' =>'required||min:8|max:32',
         ]);
         $validatedata['password']=bcrypt($validatedata['password']);
         User::create($validatedata);
-        $request->session()->flash('success','regis berhasil silahkan log in');
-        return redirect('/login');
+        return redirect('/login')->with('hapus','regis berhasil silahkan log in');
     }
 
     /**
