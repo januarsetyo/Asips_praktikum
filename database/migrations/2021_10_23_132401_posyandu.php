@@ -15,7 +15,6 @@ class Posyandu extends Migration
     {
         Schema::create('Posyandu', function (Blueprint $table) {
             $table->id();
-          
             $table->string('nama_posyandu');
             $table->string('alamat_posyandu');
             $table->timestamps();

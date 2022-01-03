@@ -50,7 +50,7 @@
                             </div>
                             <div class="form-group">
                                 <input type="text" name="jenis_kelamin_balita" id="name" placeholder="Jenis Kelamin Balita"/>
-                                
+
                             </div>
                             <div class="form-group form-button">
                                 <button type="submit" name="signup" id="signup" class="form-submit">Tambah</button>

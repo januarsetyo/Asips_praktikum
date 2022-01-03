@@ -16,7 +16,7 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        $history_posyandu = History::all();
+        $history_posyandu = DB::table('history_posyandu')->where('DELETED_AT',null)->get();
         return view('laporan/history',
         ['history_posyandu'=>$history_posyandu]
     );
@@ -87,7 +87,7 @@ class HistoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, History $history_posyandu)
+    public function update(Request $request)
     {
         date_default_timezone_set('Asia/Jakarta');
         DB::table('history_posyandu') ->where('id',$request->id) ->update([

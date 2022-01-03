@@ -16,6 +16,7 @@ class BalitaController extends Controller
      */
     public function index()
     {
+
         $balita = DB::table('balita')->where('DELETED_AT',null)->get();
         return view('master/balita',
         ['balita'=>$balita]);
@@ -29,7 +30,7 @@ class BalitaController extends Controller
      */
     public function create()
     {
-
+      
     }
 
     /**
@@ -69,13 +70,8 @@ class BalitaController extends Controller
     }
     public function editBalita(Request $request){
         $posyandu = Posyandu::all();
-        $jenis_kelamin_balita = [
-            'L'   => 'Laki-Laki',
-            'P'   => 'Perempuan'
-        ];
-
         $balita = Balita::where('id',$request->id)->first();
-        return view('edit/editbalita', ['posyandu'=>$posyandu, 'balita'=>$balita,'jenis_kelamin_balita'=>$jenis_kelamin_balita]);
+        return view('edit/editbalita', ['posyandu'=>$posyandu, 'balita'=>$balita]);
     }
 
 

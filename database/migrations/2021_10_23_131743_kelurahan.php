@@ -16,7 +16,6 @@ class Kelurahan extends Migration
     {
         Schema::create('Kelurahan', function (Blueprint $table) {
             $table->id();
-           
             $table->string('kelurahan');
             $table->timestamps();
         });

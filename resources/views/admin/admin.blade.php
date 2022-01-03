@@ -128,7 +128,7 @@
         <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
           <span class="sr-only">My profile</span>
           <span class="nav-user-img">
-            <picture><source srcset="elegant/img/avatar/avatar-illustrated-02.webp" type="image/webp"><img src="elegant/img/avatar/avatar-illustrated-02.png" alt="User name"></picture>
+            <picture><source srcset="elegant/img/avatar/avatar-illustrated-02.jpg" type="image/webp"><img src="elegant/img/avatar/avatar-illustrated-02.jpg" alt="User name"></picture>
           </span>
         </button>
         <ul class="users-item-dropdown nav-user-dropdown dropdown">

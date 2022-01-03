@@ -19,6 +19,6 @@ class CekRole
         if(in_array($request->user()->id_role,$id_role)){
             return $next($request);
         }
-        return redirect('/dasboard');
+        return redirect('/dashboard');
     }
 }

@@ -67,7 +67,7 @@ Route::get('/tambahkelurahan', [KelurahanController::class, 'tambahkelurahan'])-
 Route::get('/tambahrole', [RoleController::class, 'tambahrole'])->middleware('auth', 'CekRole:1');
 Route::get('/tambahuserrole', [UserRoleController::class, 'tambahuserrole'])->middleware('auth', 'CekRole:1');
 Route::get('/tambahposyandu', [PosyanduController::class, 'tambahposyandu'])->middleware('auth', 'CekRole:1');
-Route::get('/tambahbalita', [BalitaController::class, 'tambahbalita'])->middleware('auth', 'CekRole:1,2');
+Route::get('/tambahbalita', [BalitaController::class, 'tambahbalita'])->middleware('auth', 'CekRole:1,2,3');
 Route::get('/tambahhistory', [HistoryController::class, 'tambahhistory'])->middleware('auth', 'CekRole:1,2');
 
 
@@ -97,7 +97,7 @@ Route::post('/edit-user', [UserController::class, 'editUser'])->middleware('auth
 Route::put('/update-kecamatan{id}', [KecamatanController::class, 'update'])->middleware('auth', 'CekRole:1');
 Route::put('/update-kelurahan{id}', [KelurahanController::class, 'update'])->middleware('auth', 'CekRole:1');
 Route::put('/update-posyandu', [PosyanduController::class, 'update'])->middleware('auth', 'CekRole:1');
-Route::put('/update-balita', [BalitaController::class, 'update'])->middleware('auth', 'CekRole:1,2,3');
+Route::put('/update-balita', [BalitaController::class, 'update']);
 Route::put('/update-history', [HistoryController::class, 'update'])->middleware('auth', 'CekRole:1,2');
 Route::put('/update-userrole', [UserRoleController::class, 'update'])->middleware('auth', 'CekRole:1');
 Route::put('/update-user', [UserController::class, 'update'])->middleware('auth', 'CekRole:1');

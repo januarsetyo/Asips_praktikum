@@ -28,8 +28,7 @@
                             @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <input type="hidden" class="form-control form-control-user text-center" id="idPosIn"
-                                    placeholder="ID Balita" name="id" value="{{ $balita->id }}">
+                                <input type="hidden"placeholder="ID Balita" name="id" value="{{ $balita->id }}">
                             </div>
                             <div class="form-group">
                                 <tr>

@@ -37,8 +37,8 @@
             <th>jenis kelamin balita</th>
             <th>created at</th>
             <th>updated at</th>
-            @if (auth()->user()->id_role=='1'||'2')
             <th>Edit</th>
+            @if ((auth()->user()->id_role=="1") || (auth()->user()->id_role=="2"))
             <th>Delete</th>
             @endif
           </tr>
@@ -54,7 +54,6 @@
                 <td scope="row">{{ $databalita->jenis_kelamin_balita }}</td>
                 <td scope="row">{{ $databalita->created_at }}</td>
                 <td scope="row">{{ $databalita->updated_at }}</td>
-                @if (auth()->user()->id_role=='1'||'2')
                 <td>
                     <form action="/edit-balita" method="post" class="d-inline">
                         @csrf
@@ -64,6 +63,7 @@
                         </button>
                     </form>
                   </td>
+                  @if ((auth()->user()->id_role=="1") || (auth()->user()->id_role=="2"))
                   <td>
                     <a href="/hapus-balita{{$databalita->id}}"><button type="button" class="btn btn-danger">Hapus</button></a>
                   </td>

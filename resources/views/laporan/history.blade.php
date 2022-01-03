@@ -24,19 +24,19 @@
     <table class="table table-bordered border-primary">
         <thead>
           <tr class="users-table-info">
-            @if (auth()->user()->id_role=='1'||'2')
+            @if ((auth()->user()->id_role=="1") || (auth()->user()->id_role=="2"))
             <div class="form-group form-button">
                 <a href="/tambahhistory"><button class="form-btn primary-default-btn transparent-btn">Tambah Data</button></a>
             </div>
             @endif
             <th>id history posyandu</th>
-            <th>id balita</th>
+            <th>balita</th>
             <th>tgl posyandu</th>
             <th>berat badan balita</th>
             <th>tinggi badan</th>
             <th>created at</th>
             <th>updated at</th>
-            @if (auth()->user()->id_role=='1'||'2')
+            @if ((auth()->user()->id_role=="1") || (auth()->user()->id_role=="2"))
             <th>Edit</th>
             <th>Delete</th>
             @endif
@@ -52,7 +52,7 @@
               <td scope="row">{{ $datahistory->tinggi_badan }}</td>
               <td scope="row">{{ $datahistory->created_at }}</td>
               <td scope="row">{{ $datahistory->updated_at }}</td>
-              @if (auth()->user()->id_role=='1'||'2')
+              @if ((auth()->user()->id_role=="1") || (auth()->user()->id_role=="2"))
               <td>
                 <form action="/edit-history" method="post" class="d-inline">
                     @csrf
@@ -63,7 +63,7 @@
                 </form>
               </td>
               <td>
-                <a href="/hapus-history{{$datahistory->id}}" class="btn btn-primary tombol border-0">Hapus</a>
+                <a href="/hapus-history{{$datahistory->id}}"><button type="button" class="btn btn-danger">Hapus</button></a>
               </td>
               @endif
             </tr>

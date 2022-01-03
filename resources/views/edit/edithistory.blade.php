@@ -27,8 +27,7 @@
                             @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <input type="hidden" class="form-control form-control-user text-center" id="idPosIn"
-                                    placeholder="ID History" name="id" value="{{ $history_posyandu->id }}">
+                                <input type="hidden"  placeholder="ID History" name="id" value="{{ $history_posyandu->id }}">
                             </div>
                             <div class="form-group">
                                 <select name="Nama Balita" class="form-control text-center">
