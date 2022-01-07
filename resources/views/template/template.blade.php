@@ -144,43 +144,19 @@
     <section class="contact d-flex align-items-center py-5" id="puskesmas & cadre care">
         <div class="container-fluid text-light">
             <div class="row">
-                <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end align-items-center px-lg-5" data-aos="fade-right">
-                    <div style="width:90%">
-                        <div class="text-center text-lg-start py-4 pt-lg-0">
-                            <p>Puskesmas & Cadre Care</p>
-                            <h2 class="py-2">Hubungi kami jika ada yang ditanyakan</h2>
+                <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end align-items-center px-lg-5" data-aos="fade-left">
+                    <div style="width:100%">
+                        <div class="row">
 
-                        </div>
-                        <div>
-                            <div class="row" >
-                                <div class="col-lg-6">
-                                    <div class="form-group py-2">
-                                        <input type="text" class="form-control form-control-input" id="exampleFormControlInput1" placeholder="Enter name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group py-2">
-                                        <input type="email" class="form-control form-control-input" id="exampleFormControlInput2" placeholder="Enter phone number">
+                            <div class="col-lg-6 ">
+                              <div class="mapouter">
+                                  <div class="gmap_canvas">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15831.051943813769!2d112.76302037058464!3d-7.267790930669021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbdf60c8469f%3A0x3036be09c9fe39b6!2sRumah%20Sakit%20Universitas%20Airlangga%20(RS%20UNAIR)!5e0!3m2!1sid!2sid!4v1641561921131!5m2!1sid!2sid" width="1040" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                    <style>.gmap_canvas{overflow:hidden;background:none!important;height:500px;width:1024px}
+                                    </style>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group py-1">
-                                <input type="email" class="form-control form-control-input" id="exampleFormControlInput3" placeholder="Enter email">
-                            </div>
-                            <div class="form-group py-2">
-                                <textarea class="form-control form-control-input" id="exampleFormControlTextarea1" rows="6" placeholder="Message"></textarea>
-                            </div>
-                        </div>
-                        <div class="my-3">
-                            <a class="btn form-control-submit-button" href="#your-link">Submit</a>
-                        </div>
-                    </div> <!-- end of div -->
-                </div> <!-- end of col -->
-                <div class="col-lg-6 d-flex align-items-center" data-aos="fade-down">
-
-                    <img class="img-fluid d-none d-lg-block" src="./assets/images/contact.png" alt="contact">
-
-                </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </section> <!-- end of contact -->
@@ -194,7 +170,7 @@
                     <div class="p-2"><i class="far fa-map fa-3x"></i></div>
                     <div class="ms-2">
                         <h6>Alamat</h6>
-                        <p>Jl. Dr. Ir. H. Soekarno, Mulyorejo, Kec. Mulyorejo, Kota SBY, Jawa Timur 60115</p>
+                        <p>Jl. Dharmahusada Permai, Mulyorejo, Kec. Mulyorejo, Kota SBY, Jawa Timur 60115</p>
                     </div>
                 </div>
                 <div class="col-lg-3 d-flex align-items-center" >
@@ -259,7 +235,7 @@
                     <div class="d-flex align-items-center">
                         <h4>Newsletter</h4>
                     </div>
-                    <p class="py-3 para-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, ab.</p>
+                    <p class="py-3 para-light">Jangan Lupa daftarkan anak anda untuk kita pantau kondisi kesehatannya</p>
 
                     </div>
                 </div> <!-- end of col -->

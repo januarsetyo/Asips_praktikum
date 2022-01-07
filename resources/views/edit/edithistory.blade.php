@@ -27,9 +27,12 @@
                             @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <input type="hidden"  placeholder="ID History" name="id" value="{{ $history_posyandu->id }}">
+                                <input type="hidden"  name="id" value="{{ $history_posyandu->id }}">
                             </div>
                             <div class="form-group">
+                                <tr>
+                                    <td>Nama Balita</td>
+                                    <td>
                                 <select name="Nama Balita" class="form-control text-center">
                                     @foreach ($balita as $item)
                                         <option value="{{ $item->id }}">{{ $item->nama_balita }}</option>

@@ -53,28 +53,7 @@ class KecamatanController extends Controller
         return view('edit/editkecamatan', ['kecamatan'=>$kecamatan]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Kecamatan  $kecamatan
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Kecamatan $kecamatan)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Kecamatan  $kecamatan
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Kecamatan $kecamatan)
-    {
-        //
-    }
-
+   
     /**
      * Update the specified resource in storage.
      *

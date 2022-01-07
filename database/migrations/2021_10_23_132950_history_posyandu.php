@@ -9,13 +9,12 @@ class HistoryPosyandu extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+     * @return voidz
      */
     public function up()
     {
         Schema::create('history_posyandu', function (Blueprint $table) {
             $table->id();
-          
             $table->string('tgl_posyandu');
             $table->string('berat_badan_balita');
             $table->string('tinggi_badan');

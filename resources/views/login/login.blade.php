@@ -43,7 +43,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" type="submit" >
+						<button class="login100-form-btn" type="submit" required="required">
 							Login
 						</button>
 					</div>

@@ -29,7 +29,6 @@
                             @csrf
                             <div class="form-group">
                                 <input type="hidden" name="id" value="{{ $kelurahan->id }}">
-
                             </div>
                             <div class="form-group">
                                 <tr>

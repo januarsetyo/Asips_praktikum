@@ -91,7 +91,7 @@ class HistoryController extends Controller
     {
         date_default_timezone_set('Asia/Jakarta');
         DB::table('history_posyandu') ->where('id',$request->id) ->update([
-            'id_balita'             => $request->id,
+            
             'tgl_posyandu'          => $request->tgl_posyandu,
             'berat_badan_balita'    => $request->berat_badan_balita,
             'tinggi_badan'          => $request->tinggi_badan,
