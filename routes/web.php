@@ -2,6 +2,8 @@
 
 
 use App\Http\Controllers\login;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BalitaController;
@@ -109,3 +111,23 @@ Route::get('/hapus-posyandu{id}', [PosyanduController::class, 'delete'])->middle
 Route::get('/hapus-balita{id}', [BalitaController::class, 'delete'])->middleware('auth', 'CekRole:1,2');
 Route::get('/hapus-history{id}', [HistoryController::class, 'delete'])->middleware('auth', 'CekRole:1,2');
 Route::get('/hapus-userrole{id}', [UserRoleController::class, 'delete'])->middleware('auth', 'CekRole:1');
+
+// =============================================
+// BARANG
+// =============================================
+Route::get('/barang', [BarangController::class, 'index']);
+Route::get('/tambahbarang', [BarangController::class, 'tambahbarang']);
+Route::post('/barang-form', [BarangController::class, 'store']);
+Route::post('/edit-barang', [BarangController::class, 'editBarang']);
+Route::put('/update-barang{id}', [BarangController::class, 'update']);
+Route::get('/hapus-barang{id}', [BarangController::class, 'delete']);
+Route::get('/get-barang', [BarangController::class, 'getBarang']); // AJAX
+
+// =============================================
+// TRANSAKSI
+// =============================================
+Route::get('/transaksi', [TransaksiController::class, 'index']);
+Route::get('/tambahtransaksi', [TransaksiController::class, 'tambah']);
+Route::post('/transaksi-form', [TransaksiController::class, 'store']);
+Route::get('/detail-transaksi{id}', [TransaksiController::class, 'show']);
+Route::get('/hapus-transaksi{id}', [TransaksiController::class, 'delete']);
